@@ -16,3 +16,7 @@ Put useful *info* here about how **to run the build**, develop locally, and any 
 
 - [ ] Home Page
 - [ ] Login Page
+
+## other
+
+We should really try to host our webpage, if possible.
