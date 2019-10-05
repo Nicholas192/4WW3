@@ -2,28 +2,43 @@
 
 <html>
 	<head>
-		<title>Restuarant site</title>
+		<title>Search Form Restaurant Site</title>
 
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 
 	<body>
-		<h1>restaurant site</h1>
 
-		<h2>Search Form Page</h2>
+		<div class="header">
+			<h1>Restaurant Site</h1>
+			<p>a short description of the site...</p>
+
+ 			<a href="object-submission-page.html">Restaurant Submission</a>
+			<a href="search-form.html" class="current">Search For A Restaurant</a>
+		</div>
+
+		<h2>Search For A Restaurant</h2>
 
 		<form>
-			<label>Search by name</label>
+			<h2><span>another</span> h2</h2>
+
+			<label>Name of the Restaurant</label>
 			<input type="text" />
 
-			<label>Search by rating</label>
+			<label>Location of the Restaurant</label>
+			<input type="text" />
+
+			<label>Your Current Location</label>
+			<input type="text" />
+
+			<label>Star Rating Preference</label>
 			<select>
 				<option>1</option>
 				<option>2</option>
 				<option>3</option>
-				<option>4</option>
-				<option>5</option>
 			</select>
+
+			<input type="submit" />
 		</form>
 	</body>
 </html>

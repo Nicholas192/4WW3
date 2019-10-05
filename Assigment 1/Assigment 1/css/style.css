@@ -1,4 +1,21 @@
-body {
-  background: red;
-  font-size: 18px;
+.header {
+  border-bottom: 3px solid #1111;
+  padding: 30px;
+  margin-bottom: 45px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #FF0000;
+  margin-right: 30px;
+  padding: 3px 5px;
+}
+
+.header a:hover {
+    color: #AA0000;
+    text-decoration: underline;
+}
+
+.header .current {
+    background: #fcc;
 }
