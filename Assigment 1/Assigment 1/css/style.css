@@ -42,3 +42,38 @@ will only be applied to links that have the class button in the html files
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
 }
+
+/*Making Columns with Flexbox*/
+#flex-columns{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	background-color: #ffffff;
+	width: 100%;
+}
+
+.flex-col {
+	width: 30%;
+	text-align: center;
+}
+#flex-title {
+	width: 100%;
+	text-align: center;
+}
+
+
+/*
+	In row specifications we use clear to denote that nothing is to float to the left or right of it.
+*/
+.row {
+	clear: both;
+	float: left;
+	overflow: hidden;
+  width: 100%;
+  margin: 10px;
+}
+
+.title {
+	text-align: center;
+	width: 100%
+}
