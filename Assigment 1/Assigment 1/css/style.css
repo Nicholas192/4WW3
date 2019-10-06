@@ -1,9 +1,13 @@
+/*This defines the colour and size of the line that 
+will seperate the header from the rest of the page */
 .header {
   border-bottom: 3px solid #1111;
   padding: 30px;
   margin-bottom: 45px;
 }
 
+/*header a will determine the colour, size, and decoration of the text 
+in the header when it is not currently select and the mouse is not havering over it */
 .header a {
   text-decoration: none;
   color: #FF0000;
@@ -11,11 +15,30 @@
   padding: 3px 5px;
 }
 
+/*When the mouse is hovering over the text in the header, it will be coloured red and underlined */
 .header a:hover {
     color: #AA0000;
     text-decoration: underline;
 }
 
+/*When the header option is the one that is current (i.e. we are already on the page that the link would send us to) 
+give it a pink background colour
+*/
 .header .current {
     background: #fcc;
+}
+
+/*Using this we can make links look like buttons 
+will only be applied to links that have the class button in the html files
+*/
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
 }
