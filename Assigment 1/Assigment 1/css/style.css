@@ -1,4 +1,6 @@
+/* header class styling from the homepage.html file */
 .header {
+  position: relative;
   border-bottom: 3px solid #1111;
   padding: 30px;
   margin-bottom: 45px;
@@ -12,10 +14,30 @@
 }
 
 .header a:hover {
-    color: #AA0000;
-    text-decoration: underline;
+  color: #AA0000;
+  text-decoration: underline;
 }
 
 .header .current {
-    background: #fcc;
+  background: #fcc;
+}
+
+.header .header-login {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.main-wrap {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.restaurant-name {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.image-container {
+  margin: 0 auto;
 }

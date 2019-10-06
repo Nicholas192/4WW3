@@ -1,0 +1,41 @@
+body {
+  background: black;
+  color: white;
+  font-size: 20px;
+}
+
+h1 {
+  color: red;
+}
+
+h2 {
+  color: green;
+}
+
+form h2 {
+  color: yellow;
+}
+
+h2 span {
+  font-weight: normal;
+}
+
+form {
+  background: blue;
+}
+
+form input,
+form label,
+form select {
+  display: block;
+}
+
+
+div {
+  background: orange;
+}
+
+.header {
+  background: black;
+
+}
