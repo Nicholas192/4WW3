@@ -1,6 +1,11 @@
+<<<<<<< HEAD
+/* header class styling from the homepage.html file */
+=======
 /*This defines the colour and size of the line that 
 will seperate the header from the rest of the page */
+>>>>>>> 4033e00a8231ef3b44d97a710e860436c2b2a0cc
 .header {
+  position: relative;
   border-bottom: 3px solid #1111;
   padding: 30px;
   margin-bottom: 45px;
@@ -17,15 +22,35 @@ in the header when it is not currently select and the mouse is not havering over
 
 /*When the mouse is hovering over the text in the header, it will be coloured red and underlined */
 .header a:hover {
-    color: #AA0000;
-    text-decoration: underline;
+  color: #AA0000;
+  text-decoration: underline;
 }
 
 /*When the header option is the one that is current (i.e. we are already on the page that the link would send us to) 
 give it a pink background colour
 */
 .header .current {
-    background: #fcc;
+  background: #fcc;
+}
+
+.header .header-login {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.main-wrap {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.restaurant-name {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.image-container {
+  margin: 0 auto;
 }
 
 /*This defines the colour and size of the line that 
