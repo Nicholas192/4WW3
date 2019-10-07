@@ -1,7 +1,5 @@
 # README
 
-IMPORTANT: FOR OUR PROJECT WE DID NOT USE ANY FRAMEWORKS ie. BootStrap...etc. OR ANY LIBRARIES. EVERYTHING WAS HARD CODED FROM SCRATCH!!!
-
 # Group Member Information
 As Approved by the Professor, Our Group Has 3 Members:
 1) Edward Johnson (000972548) (MacID: johned) (mac email: johned@mcmaster.ca) (git username: edward1johnson)
@@ -25,10 +23,14 @@ IP: 3.210.213.205
 - [ ] Home Page
 - [ ] Login Page
 
-## other
+## Things We Did To Go Above And Beyond
 
-We have successfully hosted the website.
+IMPORTANT: FOR OUR PROJECT WE DID NOT USE ANY FRAMEWORKS ie. BootStrap...etc. OR ANY LIBRARIES. EVERYTHING WAS HARD CODED FROM SCRATCH!!!
 
-## problems
+## Solved Problems
 
-On pages that use flexbox the line from the footer will be above the main body even though its not in the code. Use html validator to check for problems.
+On pages that use flexbox the line from the footer will be above the main body even though its not in the code. Use html validator to check for problems. This problem was solved by changing the flex-columns attribute to be a class instead of an id.
+
+## Current Issues
+
+None at the moment
