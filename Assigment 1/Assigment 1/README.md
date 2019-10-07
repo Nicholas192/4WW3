@@ -2,6 +2,11 @@
 
 IMPORTANT: FOR OUR PROJECT WE DID NOT USE ANY FRAMEWORKS ie. BootStrap...etc. OR ANY LIBRARIES. EVERYTHING WAS HARD CODED FROM SCRATCH!!!
 
+As Approved by the Professor, Our Group Has 3 Members:
+1) Edward Johnson (000972548) (MacID: johned)
+2) Nicholas Migliore (400071112) (MacID: migliorn)
+3) David Carrie (000661652) (MacID: carriedd)
+
 Put useful *info* here about how **to run the build**, develop locally, and any other relevant info. [link name](https://google.com)
 
 ## Pages (required)
