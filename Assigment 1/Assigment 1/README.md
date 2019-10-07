@@ -1,5 +1,7 @@
 # README
 
+IMPORTANT: FOR OUR PROJECT WE DID NOT USE ANY FRAMEWORKS ie. BootStrap...etc. OR ANY LIBRARIES. EVERYTHING WAS HARD CODED FROM SCRATCH!!!
+
 Put useful *info* here about how **to run the build**, develop locally, and any other relevant info. [link name](https://google.com)
 
 ## Pages (required)
