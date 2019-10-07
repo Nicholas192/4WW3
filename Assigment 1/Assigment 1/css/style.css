@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 /* header class styling from the homepage.html file */
+=======
+/*This defines the colour and size of the line that 
+will seperate the header from the rest of the page */
+>>>>>>> 4033e00a8231ef3b44d97a710e860436c2b2a0cc
 .header {
   position: relative;
   border-bottom: 3px solid #1111;
@@ -6,6 +11,8 @@
   margin-bottom: 45px;
 }
 
+/*header a will determine the colour, size, and decoration of the text 
+in the header when it is not currently select and the mouse is not havering over it */
 .header a {
   text-decoration: none;
   color: #FF0000;
@@ -13,11 +20,15 @@
   padding: 3px 5px;
 }
 
+/*When the mouse is hovering over the text in the header, it will be coloured red and underlined */
 .header a:hover {
   color: #AA0000;
   text-decoration: underline;
 }
 
+/*When the header option is the one that is current (i.e. we are already on the page that the link would send us to) 
+give it a pink background colour
+*/
 .header .current {
   background: #fcc;
 }
@@ -40,4 +51,87 @@
 
 .image-container {
   margin: 0 auto;
+}
+
+/*Using this we can make links look like buttons 
+will only be applied to links that have the class button in the html files
+*/
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+/*Making Columns with Flexbox*/
+#flex-columns{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	background-color: #ffffff;
+	width: 100%;
+}
+
+.flex-col {
+	width: 30%;
+	text-align: center;
+}
+#flex-title {
+	width: 100%;
+	text-align: center;
+}
+
+
+/*
+	In row specifications we use clear to denote that nothing is to float to the left or right of it.
+*/
+.row {
+	clear: both;
+	float: left;
+	overflow: hidden;
+  width: 100%;
+  margin: 10px;
+}
+
+.title {
+	text-align: center;
+	width: 100%
+}
+
+/* we may end up having the navigation be in the top navigation bar instead of the header */
+/* Base look for the top menu/navigation bar*/
+.top-navigation {
+  background-color: #f2f2f2;
+  overflow: hidden;
+  margin: 10px;
+}
+
+/*Actual link attributes*/
+.top-navigation a {
+  float: left;
+  color: #000;
+  text-align: center;
+  padding: 16px 18px;
+  text-decoration: none;
+  font-size: 21px;
+}
+
+/*CSS Method of handling mouse hovering*/
+.top-navigation a:hover {
+  background-color: #AA0000;
+  color: #ddd;
+}
+
+/*
+When the navigation option is the one that is current (i.e. we are already on the page that the link would send us to) 
+give it a pink background colour
+*/
+.top-navigation a.active {
+  background-color: #fcc;
+  color: black;
 }

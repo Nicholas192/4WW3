@@ -13,15 +13,42 @@
 			<h1>Restaurant Site</h1>
 			<p>a short description of the site...</p>
 
+			<a href="homepage.html">Homepage</a>
  			<a href="object-submission-page.html">Restaurant Submission</a>
 			<a href="search-form.html" class="current">Search For A Restaurant</a>
 		</div>
 
-		<h2>Search For A Restaurant</h2>
+		<!--<h2>Search For A Restaurant</h2>-->
 
 		<form>
-			<h2><span>another</span> h2</h2>
-
+			<!--<h2><span>another</span> h2</h2>-->
+			<div id="flex-columns" class="row">
+					<div id="flex-title" class="title">
+						<h2>Restaurant Submission Page</h2>
+					</div>
+					<div class="flex-col"><label>Name of the Restaurant</label></div>
+					<div class="flex-col"><input type="text" /></div>
+				</div>
+				<div id="flex-columns" class="row">
+					<div class="flex-col"><label>Location of the Restaurant</label></div>
+					<div class="flex-col"><input type="text" /></div>
+				</div>
+				<div id="flex-columns" class="row">
+					<div class="flex-col"><label>Your Current Location</label></div>
+					<div class="flex-col"><input type="text" /></div>
+				</div>
+				<div id="flex-columns" class="row">
+						<div class="flex-col"><label>Star Rating Preference</label></div>
+						<div class="flex-col"><select>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select></div>
+				</div>
+				<div id="flex-columns" class="row">
+						<div class="flex-col"><a href="results-page.html" class="button">Submit</a></div>
+			</div>
+			<!--
 			<label>Name of the Restaurant</label>
 			<input type="text" />
 
@@ -38,7 +65,9 @@
 				<option>3</option>
 			</select>
 
-			<input type="submit" />
+			<a href="results-page.html" class="button">Submit</a>
+		-->
+			<!--<input type="submit"/>-->
 		</form>
 	</body>
 </html>

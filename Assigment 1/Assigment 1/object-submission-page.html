@@ -13,14 +13,39 @@
 			<h1>Restaurant Site</h1>
 			<p>a short description of the site...</p>
 
+			<a href="homepage.html">Homepage</a>
  			<a href="object-submission-page.html" class="current">Restaurant Submission</a>
 			<a href="search-form.html">Search For A Restaurant</a>
 		</div>
 
-		<h2>Restaurant Submission Page</h2>
+		<!--<h2>Restaurant Submission Page</h2>-->
 
 		<form>
-			<label>name</label>
+
+			<div id="flex-columns" class="row">
+				<div id="flex-title" class="title">
+					<h2>Restaurant Submission Page</h2>
+				</div>
+				<div class="flex-col"><label>name</label></div>
+				<div class="flex-col"><input type="text" /></div>
+			</div>
+			<div id="flex-columns" class="row">
+				<div class="flex-col"><label>address</label></div>
+				<div class="flex-col"><input type="text" /></div>
+			</div>
+			<div id="flex-columns" class="row">
+				<div class="flex-col"><label>phone number</label></div>
+				<div class="flex-col"><input type="tel" /></div>
+			</div>
+			<div id="flex-columns" class="row">
+					<div class="flex-col"><label>description (type of food, etc)</label></div>
+					<div class="flex-col"><textarea></textarea></div>
+			</div>
+			<div id="flex-columns" class="row">
+					<div class="flex-col"><a href="results-page.html" class="button">Submit</a></div>
+			</div>
+
+			<!--<label>name</label>
 			<input type="text" />
 
 			<label>address</label>
@@ -32,7 +57,9 @@
 			<label>description (type of food, etc)</label>
 			<textarea></textarea>
 
-			<input type="submit" />
+			<a href="results-page.html" class="button">Submit</a>-->
+			
+			<!--<input type="submit"/>-->
 		</form>
 	</body>
 </html>
