@@ -103,20 +103,6 @@ This is a placeholder that we may replace later
 	text-align: center;
 }
 
-
-/*
-  In row specifications we use clear to denote that nothing is to float to the left or right of it.
-  add a margin to the rows so that there will be space between them
-  this will make it easier to tap on buttons or textboxes that are in rows when on a mobile device
-*/
-.row {
-	clear: both;
-	float: left;
-	overflow: hidden;
-  width: 100%;
-  margin: 10px;
-}
-
 .title {
 	text-align: center;
 	width: 100%
