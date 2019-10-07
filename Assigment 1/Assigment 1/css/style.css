@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 /* header class styling from the homepage.html file */
-=======
 /*This defines the colour and size of the line that 
 will seperate the header from the rest of the page */
->>>>>>> 4033e00a8231ef3b44d97a710e860436c2b2a0cc
 .header {
   position: relative;
   border-bottom: 3px solid #1111;
@@ -33,10 +30,15 @@ give it a pink background colour
   background: #fcc;
 }
 
+/* This css is used to keep the login buttons at a fixed position in the top right portion of the window */
 .header .header-login {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.header .header-login .current {
+  background-color: #fcc
 }
 
 .main-wrap {
@@ -60,14 +62,6 @@ will seperate the header from the rest of the page */
   padding: 30px;
   margin-top: 45px;
 }
-
-
-
-
-
-
-
-
 
 /*Using this we can make links look like buttons 
 will only be applied to links that have the class button in the html files
@@ -122,35 +116,3 @@ This is a placeholder that we may replace later
 	width: 100%
 }
 
-/* we may end up having the navigation be in the top navigation bar instead of the header */
-/* Base look for the top menu/navigation bar*/
-.top-navigation {
-  background-color: #f2f2f2;
-  overflow: hidden;
-  margin: 10px;
-}
-
-/*Actual link attributes*/
-.top-navigation a {
-  float: left;
-  color: #000;
-  text-align: center;
-  padding: 16px 18px;
-  text-decoration: none;
-  font-size: 21px;
-}
-
-/*CSS Method of handling mouse hovering*/
-.top-navigation a:hover {
-  background-color: #AA0000;
-  color: #ddd;
-}
-
-/*
-When the navigation option is the one that is current (i.e. we are already on the page that the link would send us to) 
-give it a pink background colour
-*/
-.top-navigation a.active {
-  background-color: #fcc;
-  color: black;
-}
