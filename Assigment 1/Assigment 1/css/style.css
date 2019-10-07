@@ -6,7 +6,7 @@ will seperate the header from the rest of the page */
   margin-bottom: 45px;
 }
 
-/*header a will determine the colour, size, and decoration of the text 
+/*header a will determine the colour, size, and decoration of the link text 
 in the header when it is not currently select and the mouse is not havering over it */
 .header a {
   text-decoration: none;
@@ -28,14 +28,31 @@ give it a pink background colour
     background: #fcc;
 }
 
+/*This defines the colour and size of the line that 
+will seperate the header from the rest of the page */
+.footer {
+  border-top: 3px solid #1111;
+  padding: 30px;
+  margin-top: 45px;
+}
+
+
+
+
+
+
+
+
+
 /*Using this we can make links look like buttons 
 will only be applied to links that have the class button in the html files
+This is a placeholder that we may replace later
 */
 .button {
   font: bold 11px Arial;
   text-decoration: none;
-  background-color: #EEEEEE;
   color: #333333;
+  background-color: #EEEEEE;
   padding: 2px 6px 2px 6px;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #333333;
@@ -63,7 +80,9 @@ will only be applied to links that have the class button in the html files
 
 
 /*
-	In row specifications we use clear to denote that nothing is to float to the left or right of it.
+  In row specifications we use clear to denote that nothing is to float to the left or right of it.
+  add a margin to the rows so that there will be space between them
+  this will make it easier to tap on buttons or textboxes that are in rows when on a mobile device
 */
 .row {
 	clear: both;
