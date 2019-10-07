@@ -20,3 +20,7 @@ Put useful *info* here about how **to run the build**, develop locally, and any 
 ## other
 
 We should really try to host our webpage, if possible.
+
+## problems
+
+On pages that use flexbox the line from the footer will be above the main body even though its not in the code. Use html validator to check for problems.
