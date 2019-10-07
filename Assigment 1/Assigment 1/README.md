@@ -7,8 +7,6 @@ As Approved by the Professor, Our Group Has 3 Members:
 2) Nicholas Migliore (400071112) (MacID: migliorn)
 3) David Carrie (000661652) (MacID: carriedd)
 
-Put useful *info* here about how **to run the build**, develop locally, and any other relevant info. [link name](https://google.com)
-
 ## Pages (required)
 
 - [ ] Search form
@@ -17,8 +15,6 @@ Put useful *info* here about how **to run the build**, develop locally, and any 
 - [ ] Object submission Page
 - [ ] User Registration page
 
-*note: we also need to implement a **header**, **footer**, and **navigation menu** (optionally a **sidebar** as well)*
-
 ## Pages (nice to have)
 
 - [ ] Home Page
@@ -26,7 +22,7 @@ Put useful *info* here about how **to run the build**, develop locally, and any 
 
 ## other
 
-We should really try to host our webpage, if possible.
+We have successfully hosted the website.
 
 ## problems
 
