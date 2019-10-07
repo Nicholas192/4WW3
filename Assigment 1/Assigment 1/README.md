@@ -2,12 +2,15 @@
 
 IMPORTANT: FOR OUR PROJECT WE DID NOT USE ANY FRAMEWORKS ie. BootStrap...etc. OR ANY LIBRARIES. EVERYTHING WAS HARD CODED FROM SCRATCH!!!
 
+# Group Member Information
 As Approved by the Professor, Our Group Has 3 Members:
-1) Edward Johnson (000972548) (MacID: johned)
-2) Nicholas Migliore (400071112) (MacID: migliorn)
-3) David Carrie (000661652) (MacID: carriedd)
+1) Edward Johnson (000972548) (MacID: johned) (mac email: johned@mcmaster.ca) (git username: edward1johnson)
+2) Nicholas Migliore (400071112) (MacID: migliorn) (mac email: migliorn@mcmaster.ca) (git username: Nicholas192)
+3) David Carrie (000661652) (MacID: carriedd) (mac email: carriedd@mcmaster.ca) (git username: DavidCarrie)
 
-Put useful *info* here about how **to run the build**, develop locally, and any other relevant info. [link name](https://google.com)
+# Website
+Link to the page: http://3.210.213.205/index.html
+IP: 3.210.213.205
 
 ## Pages (required)
 
@@ -17,8 +20,6 @@ Put useful *info* here about how **to run the build**, develop locally, and any 
 - [ ] Object submission Page
 - [ ] User Registration page
 
-*note: we also need to implement a **header**, **footer**, and **navigation menu** (optionally a **sidebar** as well)*
-
 ## Pages (nice to have)
 
 - [ ] Home Page
@@ -26,7 +27,7 @@ Put useful *info* here about how **to run the build**, develop locally, and any 
 
 ## other
 
-We should really try to host our webpage, if possible.
+We have successfully hosted the website.
 
 ## problems
 
