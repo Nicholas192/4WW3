@@ -7,6 +7,8 @@ As Approved by the Professor, Our Group Has 3 Members:
 2) Nicholas Migliore (400071112) (MacID: migliorn)
 3) David Carrie (000661652) (MacID: carriedd)
 
+Link to the page: http://3.210.213.205/index.html
+
 ## Pages (required)
 
 - [ ] Search form
