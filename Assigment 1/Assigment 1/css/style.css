@@ -80,12 +80,18 @@ This is a placeholder that we may replace later
 }
 
 /*Making Columns with Flexbox*/
-#flex-columns{
+/*
+  In flex column specifications we use clear to denote that nothing is to float to the left or right of it.
+  add a margin to the rows so that there will be space between them
+  this will make it easier to tap on buttons or textboxes that are in rows when on a mobile device
+*/
+.flex-columns{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	background-color: #ffffff;
-	width: 100%;
+  width: 100%;
+  margin: 20px;
 }
 
 .flex-col {
