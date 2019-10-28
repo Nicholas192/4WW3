@@ -16,7 +16,7 @@
 
 			<a href="index.html">Homepage</a>
  			<a href="object-submission-page.html">Restaurant Submission</a>
-			<a href="search-form.html" class="current">Search For A Restaurant</a>
+			<a href="search-form.html" class="current">Search</a>
 			
 			<div class="header-login">
 				<a href="registration.html">Register</a>
@@ -24,31 +24,33 @@
 			</div>
 		</div>
 
-		<!--<h2>Search For A Restaurant</h2>-->
+		<!--<h2>Search</h2>-->
 
 		<form>
 			<!--<h2><span>another</span> h2</h2>-->
 			<div class="flex-columns">
 					<div id="flex-title" class="title">
-						<h2>Restaurant Submission Page</h2>
+						<h2>Restaurant Search Page</h2>
 					</div>
-					<div class="flex-col"><label>Name of the Restaurant</label></div>
-					<div class="flex-col"><input type="text" /></div>
+					<div class="flex-col"><label for="rest_input">Name of the Restaurant</label></div>
+					<div class="flex-col"><input type="text" placeholder="Restaurant" id="rest_input"/></div>
 				</div>
 				<div class="flex-columns">
-					<div class="flex-col"><label>Location of the Restaurant</label></div>
-					<div class="flex-col"><input type="text" /></div>
+					<div class="flex-col"><label for="location_input">Location of the Restaurant</label></div>
+					<div class="flex-col"><input type="text" placeholder="Location" id="location_input"/></div>
 				</div>
 				<div class="flex-columns">
-					<div class="flex-col"><label>Your Current Location</label></div>
-					<div class="flex-col"><input type="text" /></div>
+					<div class="flex-col"><label for="your_location">Your Current Location</label></div>
+					<div class="flex-col"><input type="text" placeholder="Your Location" id="your_location"/></div>
 				</div>
 				<div class="flex-columns">
-						<div class="flex-col"><label>Star Rating Preference</label></div>
-						<div class="flex-col"><select>
+						<div class="flex-col"><label for="rating_input">Star Rating Preference</label></div>
+						<div class="flex-col"><select id="rating_input">
 								<option>1</option>
 								<option>2</option>
 								<option>3</option>
+								<option>4</option>
+								<option>5</option>
 							</select></div>
 				</div>
 				<div class="flex-columns">

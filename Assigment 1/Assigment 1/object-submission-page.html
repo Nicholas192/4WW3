@@ -16,7 +16,7 @@
 
 			<a href="index.html">Homepage</a>
  			<a href="object-submission-page.html" class="current">Restaurant Submission</a>
-			<a href="search-form.html">Search For A Restaurant</a>
+			<a href="search-form.html">Search</a>
 			
 			<div class="header-login">
 				<a href="registration.html">Register</a>
@@ -32,20 +32,28 @@
 				<div id="flex-title" class="title">
 					<h2>Restaurant Submission Page</h2>
 				</div>
-				<div class="flex-col"><label>name</label></div>
-				<div class="flex-col"><input type="text" /></div>
+				<div class="flex-col"><label for="rest_name">Name</label></div>
+				<div class="flex-col"><input type="text" placeholder="Restaurant Name" id="rest_name"/></div>
 			</div>
 			<div class="flex-columns">
-				<div class="flex-col"><label>address</label></div>
-				<div class="flex-col"><input type="text" /></div>
+				<div class="flex-col"><label for="address_input">Address</label></div>
+				<div class="flex-col"><input type="text" placeholder="Address" id="address_input"/></div>
 			</div>
 			<div class="flex-columns">
-				<div class="flex-col"><label>phone number</label></div>
-				<div class="flex-col"><input type="tel" /></div>
+				<div class="flex-col"><label for="phone_input">Phone Number</label></div>
+				<div class="flex-col"><input type="tel" placeholder="Phone" id="phone_input"/></div>
 			</div>
 			<div class="flex-columns">
-					<div class="flex-col"><label>description (type of food, etc)</label></div>
-					<div class="flex-col"><textarea></textarea></div>
+				<div class="flex-col"><label for="latitude_input">Latitude</label></div>
+				<div class="flex-col"><input type="number" placeholder="Latitude" id="latitude_input"/></div>
+			</div>
+			<div class="flex-columns">
+				<div class="flex-col"><label for="longitude_input">Longitude</label></div>
+				<div class="flex-col"><input type="number" placeholder="Longitude" id="longitude_input"/></div>
+			</div>
+			<div class="flex-columns">
+					<div class="flex-col"><label for="description_input">Description</label></div>
+					<div class="flex-col"><textarea id="description_input" placeholder="Description (type of food, etc)"></textarea></div>
 			</div>
 			<div class="flex-columns">
 					<div class="flex-col"><a href="results-page.html" class="button">Submit</a></div>

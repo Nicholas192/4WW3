@@ -16,7 +16,7 @@
 
 			<a href="index.html">Homepage</a>
  			<a href="object-submission-page.html">Restaurant Submission</a>
-			<a href="search-form.html">Search For A Restaurant</a>
+			<a href="search-form.html">Search</a>
 			
 			<div class="header-login">
 				<a href="registration.html" class="current">Register</a>
@@ -29,20 +29,24 @@
 					<h2>NEW USER Registration Page</h2>
 				</div>
 				
-				<div class="flex-col"><label>Name</label></div>
-				<div class="flex-col"><input type="text" /></div>
+				<div class="flex-col"><label for="name_input">Name</label></div>
+				<div class="flex-col"><input type="text" placeholder="Your Name" id="name_input"/></div>
 			</div>
 			<div class="flex-columns">
-				<div class="flex-col"><label>Email</label></div>
-				<div class="flex-col"><input type="text" /></div>
+				<div class="flex-col"><label for="email_input">Email</label></div>
+				<div class="flex-col"><input type="email" placeholder="youremail@address.ca" id="email_input"/></div>
 			</div>
 			<div class="flex-columns">
-				<div class="flex-col"><label>Password</label></div>
-				<div class="flex-col"><input type="password" /></div>
+				<div class="flex-col"><label for="password_input">Password</label></div>
+				<div class="flex-col"><input type="password" placeholder="Password" id="password_input"/></div>
 			</div>
 			<div class="flex-columns">
-				<div class="flex-col"><label>Confirm Password</label></div>
-				<div class="flex-col"><input type="password" /></div>
+				<div class="flex-col"><label for="confirm_password">Confirm Password</label></div>
+				<div class="flex-col"><input type="password" placeholder="Confirm" id="confirm_password"/></div>
+			</div>
+			<div class="flex-columns">
+				<div class="flex-col"><label for="allow_notifications">Allow Email Notifications?</label></div>
+				<div class="flex-col"><input type="checkbox" id="allow_notifications"/>Yes</div>
 			</div>
 			<div class="flex-columns">
 					<div class="flex-col"><a href="index.html" class="button">Submit</a></div>
