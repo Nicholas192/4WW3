@@ -33,4 +33,4 @@ On pages that use flexbox the line from the footer will be above the main body e
 
 ## Current Issues
 
-None at the moment
+Ok so the fix I made to flexbox in solved problems to make the code verify in https://validator.w3.org/#validate_by_upload works perfectly for Chrome, Firefox and Safari but it makes the flexbox grid look wrong in microsoft edge.
