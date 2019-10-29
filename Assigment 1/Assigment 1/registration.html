@@ -3,9 +3,14 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Registration Page Restaurant Site</title>
 
+		<!-- import the css style sheet -->
 		<link rel="stylesheet" href="css/style.css">
+		<!-- import the js file Defer here means to run the script after the page has been parsed. -->
+		<script src="registration.js" defer></script>
 	</head>
 
 	<body>
@@ -14,9 +19,11 @@
 			<h1>Restaurant Site</h1>
 			<p>a short description of the site...</p>
 
-			<a href="index.html">Homepage</a>
- 			<a href="object-submission-page.html">Restaurant Submission</a>
-			<a href="search-form.html">Search</a>
+			<div class="flex-columns">
+					<div class="flex-col"><a href="index.html">Homepage</a></div>
+					<div class="flex-col"><a href="object-submission-page.html">Submission</a></div>
+					<div class="flex-col"><a href="search-form.html">Search</a></div>
+			</div>
 			
 			<div class="header-login">
 				<a href="registration.html" class="current">Register</a>
@@ -24,37 +31,48 @@
 			</div>
 		</div>
 
+		<form id="form">
+		<!-- use flex columns for the registration page-->
 		<div class="flex-columns">
 				<div id="flex-title" class="title">
 					<h2>NEW USER Registration Page</h2>
 				</div>
-				
+				<!-- input the name -->
 				<div class="flex-col"><label for="name_input">Name</label></div>
 				<div class="flex-col"><input type="text" placeholder="Your Name" id="name_input"/></div>
 			</div>
 			<div class="flex-columns">
+				<!-- input the email -->
 				<div class="flex-col"><label for="email_input">Email</label></div>
 				<div class="flex-col"><input type="email" placeholder="youremail@address.ca" id="email_input"/></div>
 			</div>
 			<div class="flex-columns">
+				<!-- input the password -->
 				<div class="flex-col"><label for="password_input">Password</label></div>
 				<div class="flex-col"><input type="password" placeholder="Password" id="password_input"/></div>
 			</div>
 			<div class="flex-columns">
+				<!-- confirm password -->
 				<div class="flex-col"><label for="confirm_password">Confirm Password</label></div>
 				<div class="flex-col"><input type="password" placeholder="Confirm" id="confirm_password"/></div>
 			</div>
 			<div class="flex-columns">
+				<!-- allow email notifications -->
 				<div class="flex-col"><label for="allow_notifications">Allow Email Notifications?</label></div>
 				<div class="flex-col"><input type="checkbox" id="allow_notifications"/>Yes</div>
 			</div>
 			<div class="flex-columns">
-					<div class="flex-col"><a href="index.html" class="button">Submit</a></div>
+				<!-- submit button -->
+					<!--<div class="flex-col"><a href="index.html" class="button">Submit</a></div>-->
+					<div class="flex-col"><input type="submit"></div>
 			</div>
 			<div class="flex-columns">
+				<!-- login if you already have an account -->
 					<div class="flex-col"><label>Already Have an Account?</label></div>
 					<div class="flex-col"><a href="login.html" class="button">Login</a></div>
 				</div>
+				<label id="error_List"></label>
+			</form>
 		
 
 		<div class="footer">
