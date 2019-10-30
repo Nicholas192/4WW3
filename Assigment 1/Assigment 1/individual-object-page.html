@@ -3,6 +3,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Individual Object Page Restaurant Site</title>
 
 		<link rel="stylesheet" href="css/style.css">
@@ -14,9 +15,11 @@
 			<h1>Restaurant Site</h1>
 			<p>a short description of the site...</p>
 
-			<a href="index.html">Homepage</a>
-			<a href="object-submission-page.html">Restaurant Submission</a>
-			<a href="search-form.html">Search</a>
+			<div class="flex-columns">
+				<div class="flex-col"><a href="index.html">Homepage</a></div>
+				<div class="flex-col"><a href="object-submission-page.html">Submission</a></div>
+				<div class="flex-col"><a href="search-form.html">Search</a></div>
+		</div>
 			
 			<div class="header-login">
 				<a href="registration.html">Register</a>
@@ -24,9 +27,24 @@
 			</div>
 		</div>
 
+		<div class="main-wrap">
 		<h2>Individual Restaurant Details</h2>
 
-		<img src="images/sample-image.png" alt="Relevant textual alternative to the image"/>
+		<div id="map"></div>
+		<script>
+			var map;
+			function initMap() {
+			  map = new google.maps.Map(document.getElementById('map'), {
+				  	//center: {lat: latitude, lng: longitude},
+				  	center: {lat: 18.517768, lng: 73.843918},
+					zoom: 20
+			  });
+			}
+	  </script>
+	  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAa89NrARgn9jWfOTuSZJKLvBm1oplAMU&callback=initMap"
+	  async defer></script>
+
+		<!--<img src="images/sample-image.png" alt="Relevant textual alternative to the image"/>-->
 
 		<h3>Description</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -58,6 +76,7 @@
 		
 		<a href="results-page.html">back to search results</a>
 
+	</div>
 		<div class="footer">
 			<h1>About Our Team</h1>
 			<p>we will put contact information here</p>

@@ -1,3 +1,16 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+  height: 600px;
+  width: 600px;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 /* header class styling from the homepage.html file */
 /*This defines the colour and size of the line that 
 will seperate the header from the rest of the page */
@@ -114,7 +127,18 @@ This is a placeholder that we may replace later
 /* When the screen is smaller than a certain size, we can define things from elsewhere in the css file differently*/
 /* WIP */
 
-
+  /* Always set the map height explicitly to define the size of the div
+  * element that contains the map. */
+  #map {
+    height: 300px;
+    width: 300px;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+	  height: 100%;
+	  margin: 0;
+	  padding: 0;
+  }
   .picture{
     width: 100%;
   }
@@ -180,7 +204,7 @@ This is a placeholder that we may replace later
   }
   
   .main-wrap {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
   }
   
@@ -224,6 +248,18 @@ This is a placeholder that we may replace later
 /* for screens that are less than 400px wide */
 @media only screen and (max-width: 400px){
 
+    /* Always set the map height explicitly to define the size of the div
+  * element that contains the map. */
+  #map {
+    height: 250px;
+    width: 250px;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+	  height: 100%;
+	  margin: 0;
+	  padding: 0;
+  }
 
   .picture{
     width: 130%;
@@ -290,7 +326,7 @@ This is a placeholder that we may replace later
   }
   
   .main-wrap {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
   }
   

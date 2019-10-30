@@ -5,6 +5,7 @@ const email = document.getElementById('email_input');
 const password = document.getElementById('password_input');
 const confirm = document.getElementById('confirm_password');
 const notify = document.getElementById('allow_notifications');
+//const dob = document.getElementById('dob_input');
 const errorOut = document.getElementById('error_List');
 
 
@@ -23,6 +24,7 @@ if(form){
         validateEmail();
         validatePassword();
         validateConfirmPassword();
+        //vaidlateDateOfBirth();
         if (errors.length > 0){
             e.preventDefault();
             errorOut.innerText = errors.join(', ');
@@ -30,6 +32,28 @@ if(form){
         }
     });
 }
+
+/*//replace &, <, and >
+//this is to make the website more secure, but it is not perfect
+function escapeBasic(str) {
+    return(
+        str.replace(/&/g, "&amp;")
+           .replace(/</g, "&lt;")
+           .replace(/>/g, "&gt;")
+    );
+}
+
+//replace &, <, and >
+//using the browser's built-in functionality
+//much safer
+function escapeHtml(str) {
+    var div =
+    document.appendChild(
+        document.createTextNode(str)
+    );
+    return div.innerHTML;
+}
+*/
 
 // Checking if inputs are empty
 function validateEmpty(){
@@ -72,6 +96,12 @@ function validateEmail(){
         errors.push('Email invalid');
     }
 }
+
+/*function validateDateOfBirth(){
+    if (!(/^(18|19|20)\d\d[-/](0[1-9]|1[012])[-/](0[1-9]|[12][0-9]|3[01])$/.test(email.value))) {
+        errors.push('Date of birth invalid');
+    }
+}*/
 
 // Validating Password requirements, this can be split up more.
 function validatePassword(){
