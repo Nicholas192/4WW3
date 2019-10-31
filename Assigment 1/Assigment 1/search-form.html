@@ -6,6 +6,9 @@
 		<title>Search Form Restaurant Site</title>
 
 		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- geolocation is done in the js file -->
+		<script src="search.js" defer></script>
 	</head>
 
 	<body>
@@ -14,9 +17,11 @@
 			<h1>Restaurant Site</h1>
 			<p>a short description of the site...</p>
 
-			<a href="index.html">Homepage</a>
- 			<a href="object-submission-page.html">Restaurant Submission</a>
-			<a href="search-form.html" class="current">Search</a>
+			<div class="flex-columns">
+				<div class="flex-col"><a href="index.html">Homepage</a></div>
+				<div class="flex-col"><a href="object-submission-page.html">Submission</a></div>
+				<div class="flex-col"><a href="search-form.html" class="current">Search</a></div>
+			</div>
 			
 			<div class="header-login">
 				<a href="registration.html">Register</a>
@@ -26,6 +31,8 @@
 
 		<!--<h2>Search</h2>-->
 
+		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR-KEY&callback=initMap"
+	  async defer></script>
 		<form>
 			<!--<h2><span>another</span> h2</h2>-->
 			<div class="flex-columns">
@@ -40,10 +47,6 @@
 					<div class="flex-col"><input type="text" placeholder="Location" id="location_input"/></div>
 				</div>
 				<div class="flex-columns">
-					<div class="flex-col"><label for="your_location">Your Current Location</label></div>
-					<div class="flex-col"><input type="text" placeholder="Your Location" id="your_location"/></div>
-				</div>
-				<div class="flex-columns">
 						<div class="flex-col"><label for="rating_input">Star Rating Preference</label></div>
 						<div class="flex-col"><select id="rating_input">
 								<option>1</option>
@@ -52,9 +55,21 @@
 								<option>4</option>
 								<option>5</option>
 							</select></div>
+				</div><!--
+				<div class="flex-columns">
+					<div class="flex-col"><label for="your_location">Your Current Location</label></div>
+					<div class="flex-col"><input type="text" placeholder="Your Location" id="your_location"/></div>
+				</div>-->
+				<div class="flex-columns">
+					<div class="flex-col"><label for="my_button">Search By Your Current Location</label></div>
+					<div class="flex-col"><input type="button" id="my_button"/>Search</div>
 				</div>
 				<div class="flex-columns">
 						<div class="flex-col"><a href="results-page.html" class="button">Submit</a></div>
+			</div>
+
+			<div class="flex-columns">
+					<label id="error_List"></label>
 			</div>
 			
 
