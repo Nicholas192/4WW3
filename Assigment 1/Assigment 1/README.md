@@ -2,9 +2,9 @@
 
 # Group Member Information
 As Approved by the Professor, Our Group Has 3 Members:
-1) Edward Johnson (000972548) (MacID: johned) (mac email: johned@mcmaster.ca) (git username: edward1johnson)
-2) Nicholas Migliore (400071112) (MacID: migliorn) (mac email: migliorn@mcmaster.ca) (git username: Nicholas192)
-3) David Carrie (000661652) (MacID: carriedd) (mac email: carriedd@mcmaster.ca) (git username: DavidCarrie)
+1) Edward Johnson (000972548) (MacID: johned) (git username: edward1johnson)
+2) Nicholas Migliore (400071112) (MacID: migliorn) (git username: Nicholas192)
+3) David Carrie (000661652) (MacID: carriedd) (git username: DavidCarrie)
 
 # Website
 Link to the page: http://3.210.213.205/index.html
