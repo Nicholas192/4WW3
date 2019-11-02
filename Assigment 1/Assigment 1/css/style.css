@@ -1,3 +1,50 @@
+/* we may end up having the navigation be in the top navigation bar instead of the header */
+/* Base look for the top menu/navigation bar*/
+.top-navigation {
+  background-color: #f2f2f2;
+  overflow: hidden;
+  margin: 10px;
+}
+
+/*Actual link attributes*/
+.top-navigation a {
+  float: left;
+  color: #000;
+  text-align: center;
+  padding: 16px 18px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/*CSS Method of handling mouse hovering*/
+.top-navigation a:hover {
+  background-color: #AA0000;
+  color: #ddd;
+}
+
+/*
+When the navigation option is the one that is current (i.e. we are already on the page that the link would send us to) 
+give it a pink background colour
+*/
+.top-navigation a.active {
+  background-color: #fcc;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Always set the map height explicitly to define the size of the div
 * element that contains the map. */
 #map {
@@ -121,11 +168,123 @@ This is a placeholder that we may replace later
 	width: 100%
 }
 
+
+/*        flex grid                                             */
+
+.flex-grid-thirds {
+  display: flex;
+  height: 40%;
+  justify-content: none;
+  text-decoration: none;
+  background-color: transparent;
+  color: black;
+}
+
+/* result table, hold the restaurants here */
+.resultTable{
+  height: 40%;
+  background-color: aliceblue;
+}
+
+/* search table, hold the search query here */
+.searchTable{
+  height: 100%;
+  background-color: #fcc;
+}
+
+/* flex grid column for the restaurant listing*/
+.flex-grid-thirds .col {
+  width:32%;
+  height: 100%;
+  font-size:1.4vw;
+  flex:1;
+  background: aliceblue;
+}
+
+/* flex grid for the search results*/
+.flex-grid-thirds .colSearch {
+  width:32%;
+  height: 100%;
+  font-size:2vw;
+  flex:1;
+  background: #fcc;
+}
+
+/* flex grid for the images results*/
+.flex-grid-thirds .colImg {
+  width:32%;
+  height: 100%;
+  font-size:2vw;
+  flex:1;
+  background: aliceblue;
+}
+
+.flex-grid-thirds a {
+  text-decoration: none;
+  color: black;
+  padding: 3px 5px;
+}
+
+
+
+/* for the body of text that appears when a marker on a map is clicked */
+.bodyc {
+  font-size: 8px;
+  width: 80%;
+  height: auto;
+}
+
+.headone {
+  font-size: 9px;
+  width: 80%;
+  height: auto;
+}
+
+.mapNotice {
+  width: 100%;
+  height: auto;
+}
+
+
 /* media queries means different rules for smaller screens */
 /* if the screen is small enough, it will change the behaviour so text and such does not leave the screen */
 @media only screen and (max-width: 800px){
 /* When the screen is smaller than a certain size, we can define things from elsewhere in the css file differently*/
 /* WIP */
+
+/* we may end up having the navigation be in the top navigation bar instead of the header */
+/* Base look for the top menu/navigation bar*/
+.top-navigation {
+  background-color: #f2f2f2;
+  overflow: hidden;
+  margin: 10px;
+}
+
+/*Actual link attributes*/
+.top-navigation a {
+  float: left;
+  color: #000;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/*CSS Method of handling mouse hovering*/
+.top-navigation a:hover {
+  background-color: #AA0000;
+  color: #ddd;
+}
+
+/*
+When the navigation option is the one that is current (i.e. we are already on the page that the link would send us to) 
+give it a pink background colour
+*/
+.top-navigation a.active {
+  background-color: #fcc;
+  color: black;
+}
+  
 
   /* Always set the map height explicitly to define the size of the div
   * element that contains the map. */
@@ -243,10 +402,120 @@ This is a placeholder that we may replace later
   }
   
 
+  /*        flex grid                                             */
+
+  .flex-grid-thirds {
+    display: flex;
+    height: 40%;
+    justify-content: none;
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+  }
+
+  /* result table, hold the restaurants here */
+  .resultTable{
+    height: 40%;
+    background-color: aliceblue;
+  }
+
+  /* search table, hold the search query here */
+  .searchTable{
+    height: 100%;
+    background-color: #fcc;
+  }
+
+  /* flex grid column for the restaurant listing*/
+  .flex-grid-thirds .col {
+    width:32%;
+    height: 100%;
+    font-size:1.4vw;
+    flex:1;
+    margin-bottom: 0%;
+    background: aliceblue;
+  }
+
+  /* flex grid for the search results*/
+  .flex-grid-thirds .colSearch {
+    width:32%;
+    height: 100%;
+    font-size:2vw;
+    flex:1;
+    background: #fcc;
+  }
+
+  /* flex grid for the images results*/
+  .flex-grid-thirds .colImg {
+    width:32%;
+    height: 100%;
+    font-size:2vw;
+    flex:1;
+    background: aliceblue;
+  }
+
+  .flex-grid-thirds a {
+    text-decoration: none;
+    color: black;
+    padding: 3px 5px;
+  }
+
+  /* for the body of text that appears when a marker on a map is clicked */
+  .bodyc {
+    font-size: 8px;
+    width: 80%;
+    height: auto;
+  }
+
+  .headone {
+    font-size: 9px;
+    width: 80%;
+    height: auto;
+  }
+
+  .mapNotice {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* for screens that are less than 400px wide */
 @media only screen and (max-width: 400px){
+
+/* we may end up having the navigation be in the top navigation bar instead of the header */
+/* Base look for the top menu/navigation bar*/
+.top-navigation {
+  background-color: #f2f2f2;
+  overflow: hidden;
+  margin: 10px;
+}
+
+/*Actual link attributes*/
+.top-navigation a {
+  float: left;
+  color: #000;
+  text-align: center;
+  padding: 8px 8px;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+/*CSS Method of handling mouse hovering*/
+.top-navigation a:hover {
+  background-color: #AA0000;
+  color: #ddd;
+}
+
+/*
+When the navigation option is the one that is current (i.e. we are already on the page that the link would send us to) 
+give it a pink background colour
+*/
+.top-navigation a.active {
+  background-color: #fcc;
+  color: black;
+}
+
+
+
 
     /* Always set the map height explicitly to define the size of the div
   * element that contains the map. */
@@ -362,5 +631,80 @@ This is a placeholder that we may replace later
     border-right: 1px solid #333333;
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CCCCCC;
+  }
+
+    /*        flex grid                                             */
+
+    .flex-grid-thirds {
+      display: flex;
+      height: 40%;
+      justify-content: none;
+      text-decoration: none;
+      background-color: transparent;
+      color: black;
+    }
+  
+    /* result table, hold the restaurants here */
+    .resultTable{
+      height: 40%;
+      background-color: aliceblue;
+    }
+  
+    /* search table, hold the search query here */
+    .searchTable{
+      height: 100%;
+      background-color: #fcc;
+    }
+  
+    /* flex grid column for the restaurant listing*/
+    .flex-grid-thirds .col {
+      width:32%;
+      height: 100%;
+      font-size:1.4vw;
+      flex:1;
+      margin-bottom: 0%;
+      background: aliceblue;
+    }
+  
+    /* flex grid for the search results*/
+    .flex-grid-thirds .colSearch {
+      width:32%;
+      height: 100%;
+      font-size:2vw;
+      flex:1;
+      background: #fcc;
+    }
+  
+    /* flex grid for the images results*/
+    .flex-grid-thirds .colImg {
+      width:32%;
+      height: 100%;
+      font-size:2vw;
+      flex:1;
+      background: aliceblue;
+    }
+  
+    .flex-grid-thirds a {
+      text-decoration: none;
+      color: black;
+      padding: 3px 5px;
+    }
+
+      /* for the body of text that appears when a marker on a map is clicked */
+  .bodyc {
+    font-size: 8px;
+    width: 80%;
+    height: auto;
+  }
+
+  .headone {
+    font-size: 9px;
+    width: 80%;
+    height: auto;
+  }
+
+  .mapNotice {
+    width: 100%;
+    height: auto;
   }
 }

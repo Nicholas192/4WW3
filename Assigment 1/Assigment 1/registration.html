@@ -14,9 +14,16 @@
 	</head>
 
 	<body>
+		<div class="top-navigation">
+			<a id="home" href="index.html">Homepage</a>
+			<a id="submit" href="object-submission-page.html">Submission</a>
+			<a id="search" href="search-form.html">Search</i></a>
+			<a class="active" id="reg" href="registration.html">Register</a>
+			<a id="login" href="login.html">Login</a>
+		</div>
 
 		<div class="header">
-			<h1>Restaurant Site</h1>
+			<!--<h1>Restaurant Site</h1>
 			<p>a short description of the site...</p>
 
 			<div class="flex-columns">
@@ -28,7 +35,7 @@
 			<div class="header-login">
 				<a href="registration.html" class="current">Register</a>
 				<a href="login.html">Login</a>
-			</div>
+			</div>-->
 		</div>
 
 		<form id="form">
@@ -56,6 +63,15 @@
 				<div class="flex-col"><label for="confirm_password">Confirm Password</label></div>
 				<div class="flex-col"><input type="password" placeholder="Confirm" id="confirm_password"/></div>
 			</div>
+			<div class="flex-columns">
+					<!-- let the user upload a profile picture -->
+					<!-- verify this using js instead of in html5 like in the object submission page
+						this was done to learn other verification methods, and because the assignment
+						specifically says to verify using js for this page
+					-->
+					<div class="flex-col"><label for="image_input">Upload a Profile Picture (jpg or png only)</label></div>
+					<div class="flex-col"><input type="file" id="image_input" required name="Image"></textarea></div>
+			</div>
 			<!--<div class="flex-columns">-->
 				<!-- input the users date of birth -->
 				<!-- we could use this to remind users they are not old enough to drink alchohol-->
@@ -78,7 +94,7 @@
 					<div class="flex-col"><a href="login.html" class="button">Login</a></div>
 				</div>
 				<div class="flex-columns">
-						<label id="error_List"></label>
+						<div class="flex-col"><label id="error_List"></label></div>
 				</div>
 			</form>
 

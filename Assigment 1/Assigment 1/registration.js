@@ -4,6 +4,7 @@ const name = document.getElementById('name_input');
 const email = document.getElementById('email_input');
 const password = document.getElementById('password_input');
 const confirm = document.getElementById('confirm_password');
+const picture = document.getElementById('image_input').value;
 const notify = document.getElementById('allow_notifications');
 //const dob = document.getElementById('dob_input');
 const errorOut = document.getElementById('error_List');
@@ -24,6 +25,7 @@ if(form){
         validateEmail();
         validatePassword();
         validateConfirmPassword();
+        validatePicture();
         //vaidlateDateOfBirth();
         if (errors.length > 0){
             e.preventDefault();
@@ -33,7 +35,7 @@ if(form){
     });
 }
 
-/*//replace &, <, and >
+//replace &, <, and >
 //this is to make the website more secure, but it is not perfect
 function escapeBasic(str) {
     return(
@@ -53,7 +55,7 @@ function escapeHtml(str) {
     );
     return div.innerHTML;
 }
-*/
+
 
 // Checking if inputs are empty
 function validateEmpty(){
@@ -122,6 +124,22 @@ function validatePassword(){
 // Validating a confirm password
 function validateConfirmPassword(){
     if (!(confirm.value === password.value)){
-        errors.push('Passwords must math');
+        errors.push('Passwords must match');
+    }
+}
+
+//validate a picture
+function validatePicture(){
+    {
+        var file_extension = picture.split('.').pop().toLowerCase(); 
+        // split function splits the filename by dot(.)
+        // pop the last element from the array to find the extension as well. 
+        // returns the filename if there is no extension.
+
+        if ((file_extension != "jpg") && (file_extension != "png")){
+            errors.push('Picture must be .jpg or .png format');
+        }
+
+
     }
 }

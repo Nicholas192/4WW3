@@ -3,17 +3,27 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Results Page Restaurant Site</title>
 
 		<link rel="stylesheet" href="css/style.css">
 		<!-- map is done in the js file -->
-		<script src="map.js" defer></script>
+		<script src="newmap.js" defer></script>
 	</head>
 
 	<body>
+		<div class="top-navigation">
+			<a id="home" href="index.html">Homepage</a>
+			<a id="submit" href="object-submission-page.html">Submission</a>
+			<a id="search" href="search-form.html">Search</i></a>
+			<a id="reg" href="registration.html">Register</a>
+			<a id="login" href="login.html">Login</a>
+		</div>
 
 		<div class="header">
-			<h1>Restaurant Site</h1>
+			<!--<h1>Restaurant Site</h1>
 			<p>a short description of the site...</p>
 
 			<div class="flex-columns">
@@ -25,56 +35,169 @@
 			<div class="header-login">
 				<a href="registration.html">Register</a>
 				<a href="login.html">Login</a>
-			</div>
+			</div>-->
 		</div>
+
+		<div class="main-wrap">
 
 		<h2>Search Results Page</h2>
 
 		<div id="map"></div>
-		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR-KEY&callback=initMap"
+		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR-KEY&callback=initMapBig"
 	  	async defer></script>
-
-
-	
-		<table class="resultTable">
-
-		<tr class="col">
-			<td>McDonalds</td>
-			<td>Upper James st.</td>
-
-		</tr>
+		</div>
 		
-		</table>
-		<ol>
-			<li>
-				<img src="images/sample-image.png" alt="Relevant textual alternative to the image"/>
-				<p>Restaurant name</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<a href="individual-object-page.html">more</a>
-			</li>
+		<!--Begin using flex grid for the search results. divide it into 3 tabs-->
+		<div class="flex-grid-thirds">
+			<!--this tab contains to page information-->
+			<!-- TODO: try to make this tab look better without ruining the other tabs-->
+			<div class="colSearch">
+				<td>Location you searched:</td>
+				<td>Upper James St.</td>
+			</div>
+			<div class="col">
+				<!--here is where the restaurant information is stored. also acts as a link to the individual object-->
+					<a class="flex-grid-thirds" href="individual-object-page.html">
+							<table class="resultTable">
+							<tr class="col">
+								<td>Name: </td>
+								<td>Turtle Jack's</td>
+								<!--lat 43.216936 lon -79.887433-->
+							</tr>
+							<tr class="col">
+								<td>Address:</td>
+								<td>1180 Upper James St, Hamilton, ON L9C 3B1</td>
+							</tr>
+							<tr class="col">
+								<td>Description:</td>
+								<td>All sorts of food to eat here!</td>
+							</tr>
+							<tr class="col">
+								<td>Rating:</td>
+								<td>4.0/5 stars</td>
+							</tr>
+							</table>
+						</a>
+			</div>
+			<div class="colImg">
+				<!--stor the picture-->
+				<td><img class="picture" src="images/TJs.PNG" alt="Relevant textual alternative to the image"/></td>
+			</div>
+		</div>
 
-			<li>
-				<img src="images/sample-image.png" alt="Relevant textual alternative to the image"/>
-				<p>Restaurant name</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<a href="individual-object-page.html">more</a>
-			</li>
 
-			<li>
-				<img src="images/sample-image.png" alt="Relevant textual alternative to the image"/>
-				<p>Restaurant name</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<a href="individual-object-page.html">more</a>
-			</li>
+		<div class="flex-grid-thirds">
+			<div class="colSearch">
+				<td>Location you searched:</td>
+				<td>Upper James St.</td>
+			</div>
+			<div class="col">
+					<a class="flex-grid-thirds" href="individual-object-page.html">
+							<table class="resultTable">
+								<tr class="col">
+									<td>Name: </td>
+									<td>The Keg Steakhouse + Bar - Hamilton Mountain</td>
+									<!--lat 43.218760, -79.887384-->
+								</tr>
+								<tr class="col">
+									<td>Address:</td>
+									<td>1170 Upper James St, Hamilton, ON L9C 3B1</td>
+								</tr>
+								<tr class="col">
+									<td>Description:</td>
+									<td>Aged beef, shellfish & happy-hour specials are the mainstays at this clubby yet casual chain.</td>
+								</tr>
+								<tr class="col">
+									<td>Rating:</td>
+									<td>4.5/5 stars</td>
+								</tr>
+							</table>
+						</a>
+			</div>
+			<div class="colImg">
+				<td><img class="picture" src="images/ks.PNG" alt="Relevant textual alternative to the image"/></td>
+			</div>
+		</div>
 
-			<li>
-				<img src="images/sample-image.png" alt="Relevant textual alternative to the image"/>
-				<p>Restaurant name</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<a href="individual-object-page.html">more</a>
-			</li>
-		</ol>
+		<div class="flex-grid-thirds">
+				<div class="colSearch">
+					<td>Location you searched:</td>
+					<td>Upper James St.</td>
+				</div>
+				<div class="col">
+						<a class="flex-grid-thirds" href="individual-object-page.html">
+								<table class="resultTable">
+									<tr class="col">
+										<td>Name: </td>
+										<td>Domino's Pizza</td>
+										<!--lat 43.216751 lon -79.886109-->
+									</tr>
+									<tr class="col">
+										<td>Address:</td>
+										<td>1171 Upper James St Unit #10, Hamilton, ON L9C 3B2</td>
+									</tr>
+									<tr class="col">
+										<td>Description:</td>
+										<td>Delivery/carryout chain offering a wide range of pizza, plus chicken & other sides.</td>
+									</tr>
+									<tr class="col">
+										<td>Rating:</td>
+										<td>3.7/5 stars</td>
+									</tr>
+								</table>
+							</a>
+				</div>
+				<div class="colImg">
+					<td><img class="picture" src="images/DPs.png" alt="Relevant textual alternative to the image"/></td>
+				</div>
+			</div>
 
+
+			<div class="flex-grid-thirds">
+					<div class="colSearch">
+						<td>Location you searched:</td>
+						<td>Upper James St.</td>
+					</div>
+					<div class="col">
+							<a class="flex-grid-thirds" href="individual-object-page.html">
+									<table class="resultTable">
+										<tr class="col">
+											<td>Name: </td>
+											<td>Shoeless Joe's Sports Grill</td>
+											<!--lat 43.216313 lon -79.886458-->
+										</tr>
+										<tr class="col">
+											<td>Address:</td>
+											<td>1183 Upper James St, Hamilton, ON L9C 3B2</td>
+										</tr>
+										<tr class="col">
+											<td>Description:</td>
+											<td>Late-night food. Outdoor seating. Great cocktails</td>
+										</tr>
+										<tr class="col">
+											<td>Rating:</td>
+											<td>4.2/5 stars</td>
+										</tr>
+									</table>
+								</a>
+					</div>
+					<div class="colImg">
+						<td><img class="picture" src="images/SJs.jpg" alt="Relevant textual alternative to the image"/></td>
+					</div>
+				</div>
+
+
+
+
+
+
+
+		
+		
+		
+			
+		
+		
 		<div class="footer">
 			<h1>About Our Team</h1>
 			<p>we will put contact information here</p>
