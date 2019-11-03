@@ -71,6 +71,9 @@ function validateEmpty(){
     if (confirm.value === '' || confirm.value == null){
         errors.push('Confirm Password field is Empty');
     }
+    if(picture.value === null || picture.value === ""){
+        errors.push('Picture field is Empty');
+    }
 }
 
 // Regular Expression Pattern

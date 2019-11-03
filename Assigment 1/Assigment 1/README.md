@@ -34,3 +34,6 @@ On pages that use flexbox the line from the footer will be above the main body e
 ## Current Issues
 
 Ok so the fix I made to flexbox in solved problems to make the code verify in https://validator.w3.org/#validate_by_upload works perfectly for Chrome, Firefox and Safari but it makes the flexbox grid look wrong in microsoft edge.
+
+When you press submit on the registration page and it gives you an incorrect file type for the image submission and then you choose
+a correct file type for the image and the rest of the fields are also correct the page will not submit until it is refreshed.
