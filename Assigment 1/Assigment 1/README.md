@@ -13,7 +13,7 @@ IP: 3.210.213.205
 ## Pages (required)
 
 - [ ] Search form
-- [ ] Sample results Page
+- [ ] Sample results Page 
 - [ ] Sample individual object page
 - [ ] Object submission Page
 - [ ] User Registration page
