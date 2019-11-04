@@ -9,6 +9,7 @@ As Approved by the Professor, Our Group Has 3 Members:
 # Website
 Link to the page: http://3.210.213.205/index.html
 IP: 3.210.213.205
+domain name: https://edwardewkj.com/
 
 ## Pages (required)
 

@@ -35,6 +35,8 @@ if(form){
     });
 }
 
+//due to a misunderstanding about the second part of the project, i felt it was nessessary to use escape functions
+//unused because it is not required... yet
 //replace &, <, and >
 //this is to make the website more secure, but it is not perfect
 function escapeBasic(str) {
