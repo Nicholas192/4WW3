@@ -22,6 +22,10 @@ var markers = [
     ["Shoeless Joe's Sports Grill", 43.216229, -79.886496, "Shoeless Joe's Sports Grill"]
     
 ]
+/*markers[n][m] where 
+n is the restaurant we are making a marker for
+m is the name [1] the latitude and longitue [2] and [3] and [4] is the text that will appear when the user clicks on the marker
+*/
 
 //this map is used for the results page
 //make as many restaurants into markers as reasonably possible
@@ -31,6 +35,8 @@ function initMapBig(){
         center: {lat: 43.216849, lng: -79.887482},
         zoom: 18
     });
+
+    //Add a label for each marker that will be on the map
     for (var n = 0; n < markers.length; n++ ){
         var marker = new google.maps.Marker({
             position: {lat: markers[n][1], lng: markers[n][2]},
@@ -38,7 +44,7 @@ function initMapBig(){
             title: markers[n][0],
             label: labels[n],
             zIndex: markers.length - n,
-            url: markers[n][3],
+            url: markers[n][3]//add the url to the marker, this appears when the user clicks on it
             
         });
         
@@ -59,12 +65,14 @@ function initMapBig(){
 //use this map function in the individual object page
 //only has the individual restaurant as the marker
 function initMapSmall(){
+    //make the map and set it's position
     map=new google.maps.Map(document.getElementById('map'),{
         center: {lat: 43.216849, lng: -79.887482},
         
         zoom: 18
     });
 
+    //add one marker for the individual marker
     var marker = new google.maps.Marker({
         position: {lat: markers[0][1], lng: markers[0][2]},
         map: map,
