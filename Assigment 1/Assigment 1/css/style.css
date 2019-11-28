@@ -58,7 +58,7 @@ html, body {
 	padding: 0;
 }
 
-/* header class styling from the homepage.html file */
+/* header class styling from the homepage.php file */
 /*This defines the colour and size of the line that 
 will seperate the header from the rest of the page */
 .header {
@@ -320,7 +320,7 @@ give it a pink background colour
 	  text-align: center;
   }
 
-  /* header class styling from the homepage.html file */
+  /* header class styling from the homepage.php file */
   /*This defines the colour and size of the line that 
   will seperate the header from the rest of the page */
   .header {
@@ -552,7 +552,7 @@ give it a pink background colour
 	  text-align: center;
   }
 
-  /* header class styling from the homepage.html file */
+  /* header class styling from the homepage.php file */
   /*This defines the colour and size of the line that 
   will seperate the header from the rest of the page */
   .header {

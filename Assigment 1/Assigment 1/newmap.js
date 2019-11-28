@@ -8,7 +8,7 @@ var markers = [
     '<h1 id="headone">' + 'Turtle Jacks' + '<h1>' +
     '<div id="bodyc">'+
     '<p> All sorts of food to eat here! </p>' +
-    '<p> For more information, click <a href="individual-object-page.html">here</a>' + '</p>'+
+    '<p> For more information, click <a href="individual-object-page.php">here</a>' + '</p>'+
     '</div>' + '</div>'],
     ["The Keg Stakehouse + Bar", 43.217162, -79.887279, '<div id="content">'+
     '<div id="mapNotice">'+
@@ -16,7 +16,7 @@ var markers = [
     '<h1 id="headone">' + 'The Keg Stakehouse + Bar' + '<h1>' +
     '<div id="bodyc">'+
     '<p> Aged beef, shellfish & happy-hour specials are the mainstays at this clubby yet casual chain. </p>' +
-    '<p> For more information, click <a href="individual-object-page.html">here</a>' + '</p>'+
+    '<p> For more information, click <a href="individual-object-page.php">here</a>' + '</p>'+
     '</div>' + '</div>'],
     ["Domino's Pizza", 43.216711, -79.886102, "Domino's Pizza"],
     ["Shoeless Joe's Sports Grill", 43.216229, -79.886496, "Shoeless Joe's Sports Grill"]
