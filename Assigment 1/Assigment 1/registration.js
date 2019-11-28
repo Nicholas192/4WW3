@@ -1,11 +1,12 @@
+/*jshint esversion: 6 */
 // Variables used for grabbing form information and elements.
 const form = document.getElementById('form');
-const name = document.getElementById('name_input');
+const names = document.getElementById('name_input');
 const email = document.getElementById('email_input');
 const password = document.getElementById('password_input');
-const confirm = document.getElementById('confirm_password');
+const confirms = document.getElementById('confirm_password');
 const picture = document.getElementById('image_input').value;
-const notify = document.getElementById('allow_notifications');
+//const notify = document.getElementById('allow_notifications');
 //const dob = document.getElementById('dob_input');
 const errorOut = document.getElementById('error_List');
 
@@ -39,7 +40,7 @@ if(form){
 //unused because it is not required... yet
 //replace &, <, and >
 //this is to make the website more secure, but it is not perfect
-function escapeBasic(str) {
+/*function escapeBasic(str) {
     return(
         str.replace(/&/g, "&amp;")
            .replace(/</g, "&lt;")
@@ -56,21 +57,21 @@ function escapeHtml(str) {
         document.createTextNode(str)
     );
     return div.innerHTML;
-}
+}*/
 
 
 // Checking if inputs are empty
 function validateEmpty(){
-    if (name.value === '' || name.value == null){
+    if (names.value === '' || names.value === null){
         errors.push('Name field is Empty');
     }
-    if (email.value === '' || email.value == null){
+    if (email.value === '' || email.value === null){
         errors.push('Email field is Empty');
     }
-    if (password.value === '' || password.value == null){
+    if (password.value === '' || password.value === null){
         errors.push('Password field is Empty');
     }
-    if (confirm.value === '' || confirm.value == null){
+    if (confirms.value === '' || confirms.value === null){
         errors.push('Confirm Password field is Empty');
     }
     if(picture.value === null || picture.value === ""){
@@ -128,7 +129,7 @@ function validatePassword(){
 
 // Validating a confirm password
 function validateConfirmPassword(){
-    if (!(confirm.value === password.value)){
+    if ((confirms.value !== password.value)){
         errors.push('Passwords must match');
     }
 }

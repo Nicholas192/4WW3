@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 //const locate = document.getElementById("your_location");
 const errorOut = document.getElementById("error_List");
 const findFood = document.getElementById("my_button");

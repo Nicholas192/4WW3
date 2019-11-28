@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 // Variables used for grabbing form information and elements.
 const form = document.getElementById('form');
 const email = document.getElementById('email_input');
@@ -26,7 +27,7 @@ if(form){
         }
     });
 }
-
+/*
 //due to a misunderstanding about the second part of the project, i felt it was nessessary to use escape functions
 //unused because it is not required... yet
 //replace &, <, and >
@@ -49,14 +50,14 @@ function escapeHtml(str) {
     );
     return div.innerHTML;
 }
-
+*/
 
 // Checking if inputs are empty
 function validateEmpty(){
-    if (email.value === '' || email.value == null){
+    if (email.value === '' || email.value === null){
         errors.push('Email field is Empty');
     }
-    if (password.value === '' || password.value == null){
+    if (password.value === '' || password.value === null){
         errors.push('Password field is Empty');
     }
 }
@@ -109,9 +110,3 @@ function validatePassword(){
     }
 }
 
-// Validating a confirm password
-function validateConfirmPassword(){
-    if (!(confirm.value === password.value)){
-        errors.push('Passwords must match');
-    }
-}
