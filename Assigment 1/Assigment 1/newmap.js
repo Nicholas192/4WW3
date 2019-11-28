@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 var map;
 var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';//these are the labels for the markers
 var infowindow;
@@ -21,7 +22,7 @@ var markers = [
     ["Domino's Pizza", 43.216711, -79.886102, "Domino's Pizza"],
     ["Shoeless Joe's Sports Grill", 43.216229, -79.886496, "Shoeless Joe's Sports Grill"]
     
-]
+];
 /*markers[n][m] where 
 n is the restaurant we are making a marker for
 m is the name [1] the latitude and longitue [2] and [3] and [4] is the text that will appear when the user clicks on the marker
@@ -55,7 +56,7 @@ function initMapBig(){
             return function(){
                 infowindow.setContent(markers[n][3]);
                 infowindow.open(map, marker);
-            }
+            };
         })(marker,n));
 
     }

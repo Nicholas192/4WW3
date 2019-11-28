@@ -5,24 +5,21 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Login Restaurant Site</title>
+		<title>Login Page Restaurant Finder</title>
 
 		<link rel="stylesheet" href="css/style.css">
+		<!-- import the js file Defer here means to run the script after the page has been parsed. -->
+		<script src="login.js" defer></script>
 	</head>
 
 	<!-- Login webpage and details -->
 	<body>
-		<div class="top-navigation">
-			<a id="home" href="index.html">Homepage</a>
-			<a id="submit" href="object-submission-page.html">Submission</a>
-			<a id="search" href="search-form.html">Search</i></a>
-			<a id="reg" href="registration.html">Register</a>
-			<a class="active" id="login" href="login.html">Login</a>
-		</div>
+	<div class="body-blue">
+		
 
 		<div class="header">
-			<!--<h1>Restaurant Site</h1>
-			<p>a short description of the site...</p>
+			<h1>Restaurant Finder</h1>
+			<!--<p>a short description of the site...</p>
 
 			<div class="flex-columns">
 				<div class="flex-col"><a href="index.html">Homepage</a></div>
@@ -35,7 +32,15 @@
 				<a href="login.html" class="current">Login</a>
 			</div>-->
 		</div>
+		<div class="top-navigation">
+			<a id="home" href="index.html">Homepage</a>
+			<a id="submit" href="object-submission-page.html">Submission</a>
+			<a id="search" href="search-form.html">Search</i></a>
+			<a id="reg" href="registration.html">Register</a>
+			<a class="active" id="login" href="login.html">Login</a>
+		</div>
 
+		<form id="form">
 		<!-- Login credential interface -->
 		<div class="flex-columns">
 				<div id="flex-title" class="title">
@@ -50,19 +55,39 @@
 				<div class="flex-col"><label for="password_input">Password</label></div>
 				<div class="flex-col"><input type="password" placeholder="Password" id="password_input"/></div>
 			</div>
-			<!-- sumbit button centered -->
 			<div class="flex-columns">
-					<div class="flex-col"><a href="index.html" class="button">Submit</a></div>
+				<!-- submit button -->
+					<div class="flex-col"><label for="register">Submit Login</label></div>
+					<div class="flex-col"><button id="register" type="submit">Login</div>
 			</div>
 			<!-- user can create an sccount -->
 			<div class="flex-columns">
 					<div class="flex-col"><label>Don't Have an Account?</label></div>
 					<div class="flex-col"><a href="registration.html" class="button">Register</a></div>
 		</div>
+		<div class="flex-columns">
+			<div class="flex-col"><label id="error_List"></label></div>
+		</div>
+	</form>
+
+		<!--<div class="flex-columns">
+		<div id="flex-title" class="title">
+				<h2>Login</h2>
+		</div>
+		<div class="flex-entry">
+			<div><label for="email_input">Email</label><br/><input type="text" placeholder="youremail@address.ca" id="email_input"/></div>
+		</div>
+		<div class="flex-columns">
+		<div class="flex-entry">
+			<div><label for="password_input">Password</label><br/><input type="password" placeholder="Password" id="password_input"/></div>
+		</div>
+		</div>
+	</div>-->
 
 		<div class="footer">
 			<h1>About Our Team</h1>
 			<p>we will put contact information here</p>
 		</div>
+	</div>
 	</body>
 </html>
