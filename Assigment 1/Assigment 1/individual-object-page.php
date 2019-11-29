@@ -1,5 +1,8 @@
 <?php
-	include('header.php')
+	require_once('includes/security.php');
+	require_once('includes/auth.php');
+	require_once('includes/database.php');
+	include('header.php');
 ?>
 
 		<div class="main-wrap">
