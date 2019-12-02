@@ -1,7 +1,7 @@
 <?php
 
     try {
-      $pdo = new PDO($dsn, $user, $passwd);
+      $pdo = new PDO(DB_DSN, DB_USR, DB_PSW);
       $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
       echo "Connection Failed: ".$e->getMessage();
@@ -28,15 +28,19 @@
 
     function create_restaurant($name,$address,$phone,$lat,$long,$pic_path,$description) {
       global $pdo;
-      $stmt = $pdo->prepare("INSERT INTO restaurants (name,address,phone,lat,long,pic_path,description) VALUES (?, ?)");
+      $stmt = $pdo->prepare("INSERT INTO restaurants (`name`,`address`,`phone`,`lat`,`long`,`pic_path`,`description`) VALUES (?,?,?,?,?,?,?)");
       $stmt->execute([$name,$address,$phone,$lat,$long,$pic_path,$description]);
       return $pdo->lastInsertId();
     }
 
-    function search_restaurant() {
-      global $pdo;
-      $password = sha1($passwd.'upupdowndownleftrightleftright'.$passwd.'ABABSelectStart');
-      $stmt = $pdo->prepare("SELECT * FROM users WHERE email=? AND password=? ");
-      $stmt->execute([$email,$password]);
-      return $stmt->rowCount() == 1;
+    function search_restaurant($id = null) {
+        global $pdo;
+        $stmt = $pdo->prepare("SELECT * FROM restaurants ".($id?'WHERE id=?':'')." ORDER BY id DESC");
+        if (empty($id)) 
+            $stmt->execute();
+        else
+            $stmt->execute([$id]);
+        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(!$arr) return false;
+        return ($id?$arr[0]:$arr);
     }

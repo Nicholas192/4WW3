@@ -1,32 +1,37 @@
 <?php
-// load database
-	require_once('includes/security.php');
-	require_once('includes/auth.php');
-	require_once('includes/database.php');
 
-// check for form submission
+    require_once('includes/bootstrap.php');
+
+
+    // check for form submission
 	if (!empty($_POST)) {
 		$passed_validation = true;
 
 		// validate
 		// if any validation fails, set $passed_validation to false
 
-
-
-
-
 		// if validation was successful
 		if ($passed_validation) {
-			//create user
-			$user_id = create_login($_POST['name'],$_POST['email'],$_POST['password'],$_POST['pic_path'],$_POST['marketing'])
-			if($user_id) {
-				// success
-				// setting auth cookie
-				auth_set_user($user_id);
-				header('Location: index.php');
-			} else {
-				// failure
-			}
+
+
+            $picture_path = 'images/users/'.preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['email']).'.'.strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
+            if (move_uploaded_file($_FILES["pic_path"]["tmp_name"],$picture_path)) {
+            
+                // create user
+    			$user_id = create_login($_POST['name'],$_POST['email'],$_POST['password'],$picture_path,$_POST['marketing']);
+
+                // if user was created
+    			if($user_id) {
+    				// success
+    				// setting auth cookie
+    				auth_set_user($user_id);
+    				header('Location: index.php');
+
+                // if failed to create user
+    			} else {
+    				// nothing!
+    			}
+            }
 		}
 	}
 
@@ -34,7 +39,7 @@
 	include('header.php');
 ?>
 
-		<form id="form" method="post">
+        <form id="form" method="post" enctype="multipart/form-data">
 		<!-- use flex columns for the registration page-->
 		<div class="flex-columns">
 				<div id="flex-title" class="title">
@@ -66,7 +71,7 @@
 						specifically says to verify using js for this page
 					-->
 					<div class="flex-col"><label for="image_input">Upload a Profile Picture (jpg or png only)</label></div>
-					<div class="flex-col"><input type="file" id="image_input" required name="pic_path"></div>
+					<div class="flex-col"><input type="file" id="image_input" name="pic_path"></div>
 			</div>
 			<!--<div class="flex-columns">-->
 				<!-- input the users date of birth -->
@@ -79,6 +84,11 @@
 				<div class="flex-col"><label for="allow_notifications">Allow Email Notifications?</label></div>
 				<div class="flex-col"><input type="checkbox" id="allow_notifications"  value="YES" name="marketing"/>Yes</div>
 			</div>
+
+            <div class="flex-columns">
+                <div class="flex-col" id="error_List"></div>
+            </div>
+
 			<div class="flex-columns">
 				<!-- submit button -->
 					<!--<div class="flex-col"><a href="index.php" class="button">Submit</a></div>-->
@@ -97,9 +107,5 @@
 
 
 
-		<div class="footer">
-			<h1>About Our Team</h1>
-			<p>we will put contact information here</p>
-		</div>
-	</body>
-</html>
+<script type="text/javascript" src="js/registration.js"></script>
+<?php include('footer.php'); ?>

@@ -13,20 +13,26 @@
 	</head>
 
 	<body>
-			<div class="top-navigation">
-					<a id="home" href="index.php">Homepage</a>
-					<?php if (is_logged_in()) {?>
-						<a id="submit" href="object-submission-page.php">Submission</a>
-					<?php } ?>
-					<a id="search" href="search-form.php">Search</i></a>
-					<?php if (!is_logged_in()) {?>
-						<a id="reg" href="registration.php">Register</a>
-					<a id="login" href="login.php">Login</a>
-				<?php } else { ?>
-					<a id="logout" href="logout.php">Logout</a>
+		<div class="top-navigation">
 
-				<?php }?>
-				  </div>
+			<a <?php if ($page=='index') echo 'class="active"'; ?> id="home" href="index.php">Homepage</a>
+
+			<?php if (is_logged_in()) {?>
+				<a <?php if ($page=='object-submission-page') echo 'class="active"'; ?> id="submit" href="object-submission-page.php">Submission</a>
+                
+			<?php } ?>
+
+			<a <?php if ($page=='search-form') echo 'class="active"'; ?> id="search" href="search-form.php">Search</i></a>
+
+			<?php if (!is_logged_in()) {?>
+				<a <?php if ($page=='registration') echo 'class="active"'; ?> id="reg" href="registration.php">Register</a>
+			    <a <?php if ($page=='login') echo 'class="active"'; ?> id="login" href="login.php">Login</a>
+
+			<?php } else { ?>
+				<a <?php if ($page=='logout') echo 'class="active"'; ?> id="logout" href="logout.php">Logout</a>
+
+			<?php }?>
+		</div>
 
 		<div class="header">
 			<!--<h1>Restaurant Site</h1>

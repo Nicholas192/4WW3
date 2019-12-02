@@ -1,9 +1,10 @@
 <?php
-	require_once('includes/security.php');
-	require_once('includes/auth.php');
-	require_once('includes/database.php');
-	include('header.php');
+
+    require_once('includes/bootstrap.php');
+
+    include('header.php');
 ?>
+
 
 		<!--<h2>Search</h2>-->
 
@@ -49,12 +50,5 @@
 					<label id="error_List"></label>
 			</div>
 
-
-			<div class="footer">
-				<h1>About Our Team</h1>
-				<p>we will put contact information here</p>
-			</div>
-
-		</form>
-	</body>
-</html>
+<script src="js/search.js"></script>
+<?php include('footer.php'); ?>

@@ -1,9 +1,10 @@
 <?php
-	require_once('includes/security.php');
-	require_once('includes/auth.php');
-	require_once('includes/database.php');
-	include('header.php');
+
+    require_once('includes/bootstrap.php');
+
+    include('header.php');
 ?>
+
 
 
 
@@ -153,11 +154,5 @@
 					</div>
 				</div>
 
-		<!-- the information in the footer of the webpage -->
-		<div class="footer">
-			<h1>About Our Team</h1>
-			<p>we will put contact information here</p>
-		</div>
-
-	</body>
-</html>
+<script src="js/newmap.js"></script>
+<?php include('footer.php'); ?>
