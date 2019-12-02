@@ -58,14 +58,44 @@ html, body {
 	padding: 0;
 }
 
-/* header class styling from the homepage.html file */
+/* header class styling from the homepage.php file */
+.body-white {
+  background-color: #FFFFFF;
+	margin: 0;
+	padding: 0;
+}
+
+.body-blue {
+  background-color: #DEDEFF;
+	margin: 0;
+	padding: 0;
+}
+
+.body-green {
+  background-color: #DDFFDD;
+	margin: 0;
+	padding: 0;
+}
+
+.body-yellow {
+  background-color: #FFFFBB;
+	margin: 0;
+	padding: 0;
+}
+
+.body-orange {
+  background-color: #FFDDBB;
+	margin: 0;
+	padding: 0;
+}
+
 /*This defines the colour and size of the line that 
 will seperate the header from the rest of the page */
 .header {
   position: relative;
   border-bottom: 3px solid #1111;
-  padding: 30px;
-  margin-bottom: 45px;
+  padding: 20px;
+  margin-bottom: 10px;
 }
 
 /*header a will determine the colour, size, and decoration of the link text 
@@ -111,6 +141,16 @@ give it a pink background colour
   margin: 0 auto;
 }
 
+/* for the restaurant finder website symbol */
+.symbol {
+  width: 128px;
+  height: 128px;
+  background-color: transparent;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
 .image-container {
   margin: 0 auto;
 }
@@ -121,6 +161,10 @@ will seperate the header from the rest of the page */
   border-top: 3px solid #1111;
   padding: 30px;
   margin-top: 45px;
+}
+
+.p{
+  background-color: transparent;
 }
 
 /*Using this we can make links look like buttons 
@@ -149,7 +193,7 @@ This is a placeholder that we may replace later
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	background-color: #ffffff;
+	background-color: transparent;
   width: 100%;
   margin: 20px;
 }
@@ -162,6 +206,22 @@ This is a placeholder that we may replace later
 	width: 100%;
 	text-align: center;
 }
+
+/*.flex-entry
+{
+  display:flex;
+  margin:30px;
+  flex-direction: row;
+  width:300px;
+  height:25px;
+  padding:5px;
+}
+.upper > div
+{
+  flex:1 1 auto;
+  text-align:center;
+  margin:5px;
+}*/
 
 .title {
 	text-align: center;
@@ -306,7 +366,7 @@ give it a pink background colour
 	  display: flex;
 	  flex-wrap: wrap;
 	  justify-content: space-around;
-	  background-color: #ffffff;
+	  background-color: transparent;
     width: 100%;
     margin: 20px;
   }
@@ -320,7 +380,7 @@ give it a pink background colour
 	  text-align: center;
   }
 
-  /* header class styling from the homepage.html file */
+  /* header class styling from the homepage.php file */
   /*This defines the colour and size of the line that 
   will seperate the header from the rest of the page */
   .header {
@@ -372,6 +432,16 @@ give it a pink background colour
     margin: 0 auto;
   }
   
+  /* for the restaurant finder website symbol */
+  .symbol {
+    width: 96px;
+    height: 96px;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+
   .image-container {
     margin: 0 auto;
     width: 70%;
@@ -538,7 +608,7 @@ give it a pink background colour
 	  display: flex;
 	  flex-wrap: wrap;
 	  justify-content: space-around;
-	  background-color: #ffffff;
+	  background-color: transparent;
     width: 100%;
     margin: 20px;
   }
@@ -552,7 +622,7 @@ give it a pink background colour
 	  text-align: center;
   }
 
-  /* header class styling from the homepage.html file */
+  /* header class styling from the homepage.php file */
   /*This defines the colour and size of the line that 
   will seperate the header from the rest of the page */
   .header {
@@ -602,6 +672,16 @@ give it a pink background colour
   .restaurant-name {
     width: 50%;
     margin: 0 auto;
+  }
+
+    /* for the restaurant finder website symbol */
+  .symbol {
+    width: 64px;
+    height: 64px;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+    position: absolute;
   }
   
   .image-container {
