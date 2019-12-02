@@ -141,10 +141,14 @@ give it a pink background colour
   margin: 0 auto;
 }
 
+.maintitle {
+  font-size: large;
+}
+
 /* for the restaurant finder website symbol */
 .symbol {
-  width: 128px;
-  height: 128px;
+  width: 96px;
+  height: 96px;
   background-color: transparent;
   top: 0;
   right: 0;
@@ -193,7 +197,8 @@ This is a placeholder that we may replace later
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	background-color: transparent;
+  background-color: transparent;
+  align-content: center;
   width: 100%;
   margin: 20px;
 }
@@ -432,6 +437,10 @@ give it a pink background colour
     margin: 0 auto;
   }
   
+  .maintitle {
+    font-size: large;
+  }
+
   /* for the restaurant finder website symbol */
   .symbol {
     width: 96px;
@@ -672,6 +681,10 @@ give it a pink background colour
   .restaurant-name {
     width: 50%;
     margin: 0 auto;
+  }
+
+  .maintitle {
+    font-size: large;
   }
 
     /* for the restaurant finder website symbol */
