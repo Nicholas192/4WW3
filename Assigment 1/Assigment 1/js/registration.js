@@ -26,7 +26,7 @@ if(form){
         validateEmail();
         validatePassword();
         validateConfirmPassword();
-        validatePicture();
+        //validatePicture();
         //vaidlateDateOfBirth();
         if (errors.length > 0){
             e.preventDefault();

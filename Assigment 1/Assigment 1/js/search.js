@@ -6,20 +6,20 @@ const findFood = document.getElementById("my_button");
 function getLocation() {
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(accessLocation);
-    }else{
-        //console.log("error");
-        errorOut.appendChild(document.createTextNode("error, could not find your location"));
     }
 }
 
 function accessLocation(pos){
     var lat = document.createTextNode("Latitude: "+pos.coords.latitude);
     var long = document.createTextNode("Longitude: "+pos.coords.longitude);
-    errorOut.innerHTML="";
-    errorOut.appendChild(lat);
-    errorOut.appendChild(document.createElement("br"));
-    errorOut.appendChild(long);
+
+    if (pos && pos.coords && pos.coords.latitude && pos.coords.longitude) {
+        document.getElementById("coord_lat").value=pos.coords.latitude;
+        document.getElementById("coord_long").value=pos.coords.longitude;
+    }
+    findFood.value = 'Location Acquired';
+    findFood.disabled = true;
 }
 
 //locate.addEventListener("click", getLocation);
-findFood.addEventListener("click",getLocation);
+findFood.addEventListener("click",getLocation)

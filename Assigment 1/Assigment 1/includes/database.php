@@ -42,5 +42,75 @@
             $stmt->execute([$id]);
         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if(!$arr) return false;
-        return ($id?$arr[0]:$arr);
+        return (empty($id)?$arr:array_merge($arr[0], ['reviews' => get_ratings($id)]));
     }
+
+    function advanced_search_restaurant($search_params = []) {
+
+        if (empty($search_params)) return [];
+
+        $calc_distance = (in_array('lat', array_keys($search_params)) && in_array('long', array_keys($search_params)));
+
+        $sql = 'SELECT * ';
+
+        // Formula adapted from https://stackoverflow.com/a/24372831
+        if ($calc_distance) $sql .= ', 111.111 * DEGREES(ACOS(LEAST(1.0, COS(RADIANS('.$search_params['lat'].')) * COS(RADIANS(lat)) * COS(RADIANS('.$search_params['long'].' - `long`)) + SIN(RADIANS('.$search_params['lat'].')) * SIN(RADIANS(lat))))) AS distance ';
+
+        $sql .= 'FROM restaurants WHERE 1 = 1 ';
+
+        foreach ($search_params as $key => $value) {
+
+            if (in_array($key, ['lat','long'])) continue;
+
+            $sql .= 'AND (1 = 0 ';
+
+            $value = explode(' ', trim($value));
+
+            foreach ($value as $text) {
+                $sql .= 'OR `'.$key.'` LIKE "%'.$text.'%" ';
+            }
+                
+            $sql .= ') ';
+        }
+
+        $sql .= ($calc_distance?'HAVING distance < 15':''); // Within 10km
+
+        $sql .= ' ORDER BY rating DESC;';
+
+        global $pdo;
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(!$arr) return false;
+        return $arr;
+    }
+
+
+    function save_rating($restaurant_id,$rating,$review) {
+        global $pdo;
+        $stmt = $pdo->prepare("INSERT INTO `4ww3`.`reviews` (`restaurant_id`,`rating`,`review`,`user_id`) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$restaurant_id, $rating, $review, auth_get_user_id()]);
+        return $pdo->lastInsertId();
+    }
+
+    function get_ratings($restaurant_id) {
+        global $pdo;
+        $stmt = $pdo->prepare("SELECT r.*,u.name FROM reviews r JOIN users u ON r.user_id = u.id  WHERE restaurant_id = ? ORDER BY date_submitted DESC");
+        $stmt->execute([$restaurant_id]);
+        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(!$arr) return [];
+        return $arr;
+    }
+
+    function update_restaurant_rating($restaurant_id) {
+        global $pdo;
+
+        $stmt = $pdo->prepare("SELECT SUM(rating)/count(*) as rating FROM reviews WHERE restaurant_id = ?");
+        $stmt->execute([$restaurant_id]);
+        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($arr[0]['rating'])) {
+            $stmt = $pdo->prepare("UPDATE `restaurants` SET `rating` = ? WHERE `id` = ?");
+            $stmt->execute([round($arr[0]['rating']), $restaurant_id]);
+        }
+    }
+
