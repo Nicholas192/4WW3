@@ -223,6 +223,15 @@ This is a placeholder that we may replace later
 }
 
 
+.restaurant-image {
+     background-color: black;
+     background-repeat: no-repeat;
+     background-position: center center;
+     background-size: cover;
+     width: 100%;
+     height: 400px;
+}
+
 /*        flex grid                                             */
 
 .flex-grid-thirds {
