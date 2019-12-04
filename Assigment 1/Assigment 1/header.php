@@ -29,8 +29,9 @@
 			elseif ($page=='registration') {echo '<title>Register</title>';}
 			elseif ($page=='search-form') {echo '<title>Search Restaurants</title>';} 
 			elseif ($page=='object-submission-page') {echo '<title>Submit Restaurant</title>';}
-			elseif ($page=='results-page') {echo '<title></title>';} 
-			else {echo '<title>Homepage</title>';}
+			elseif ($page=='results-page') {echo '<title>Results</title>';} 
+			elseif ($page=='individual-object-page') {echo '<title>Object</title>';} 
+			else {echo '<title>Restaurant Finder</title>';}
 		?>
 
 		<meta name="author" content="Nicholas Migliore, Edward Johnson, David Carrie">
