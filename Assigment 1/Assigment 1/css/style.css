@@ -150,11 +150,11 @@ give it a pink background colour
 /*This defines the colour and size of the line that 
 will seperate the header from the rest of the page */
 .footer {
-  border-top: 3px solid #1111;
   padding: 30px;
   margin-top: 45px;
   background: #A6B0C1;
   height: 170px;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
 }
 
 .p{
