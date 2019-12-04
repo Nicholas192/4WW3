@@ -74,7 +74,7 @@
             return 'match';
         }
 
-        if(!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/" , $_POST[$pass_key])){
+        if(!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/" , $_POST[$pass_key])){
             return 'pattern';
         }
 
@@ -157,30 +157,32 @@
         return 'ok';
     }
 
-    function validate_image($key, $accepted_type = array('jpg','jpeg','png'), $accepted_size = '20971520‬' , $required = true) {
+    function validate_image($key, $accepted_type = array('jpg','jpeg','png'), $accepted_size = '20971520‬', $required = true) {
 
-        if ($required && (empty($_FILES["pic_path"]) || $_FILES["pic_path"]['error'] == 4)) {
+        if ($required && (empty($_FILES[$key]) || $_FILES[$key]['error'] == 4)) {
             return 'required';
-        } else if (!$required && (empty($_FILES["pic_path"]) || $_FILES["pic_path"]['error'] == 4)) {
+        } else if (!$required && (empty($_FILES[$key]) || $_FILES[$key]['error'] == 4)) {
             return 'ok';
         }
 
-        $extension = strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
+        $extension = strtolower(pathinfo(basename($_FILES[$key]["name"]),PATHINFO_EXTENSION));
 
-        if (in_array($extension, $accepted_type)) {
-            if (
-                ($extension == 'png' && $_FILES["pic_path"]["type"] != 'image/png')
-                ||
-                (($extension == 'jpg' || $extension == 'jpeg') && $_FILES["pic_path"]["type"] != 'image/jpeg')
-            ) {
-                $_FILES["pic_path"] = null;
-                return 'type';
-            }
-        } else {
+        if (!in_array($extension, $accepted_type)) {
             return 'type';
         }
 
-        if ($_FILES["pic_path"]["size"] > intval($accepted_size)) return 'size';
+        if (
+            ($extension == 'png' && $_FILES[$key]["type"] != 'image/png')
+            ||
+            ($extension == 'jpg' && $_FILES[$key]["type"] != 'image/jpeg')
+            ||
+            ($extension == 'jepg' && $_FILES[$key]["type"] != 'image/jpeg')
+        ) {
+            $_FILES[$key] = null;
+            return 'type';
+        }
+
+        if ($_FILES[$key]["size"] > intval($accepted_size)) return 'size';
 
         return 'ok';
     }

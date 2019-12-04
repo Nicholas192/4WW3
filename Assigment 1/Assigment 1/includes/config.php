@@ -1,6 +1,6 @@
 <?php 
 
-    define('ENVIRONMENT','development');
+    define('ENVIRONMENT','production');
 
     if (ENVIRONMENT == 'development') {
         ini_set('display_errors', 1);

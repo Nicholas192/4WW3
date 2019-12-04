@@ -5,4 +5,4 @@
     require_once('includes/database.php');
     require_once('includes/auth.php');
     require_once('includes/validation.php');
-
+    require_once('includes/aws.php');

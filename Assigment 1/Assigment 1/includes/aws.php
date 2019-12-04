@@ -16,9 +16,9 @@
 
         $result = $s3->putObject([
             'Bucket' => S3_BUCKET,
-            'Key'    => 'users/'.$name,
-            'Body' => 'test text',
-            //'SourceFile' => $filepath,
+            'Key'    => $name,
+            // 'Body' => 'test text',
+            'SourceFile' => $filepath,
             'ACL'    => 'public-read'
         ]);
 

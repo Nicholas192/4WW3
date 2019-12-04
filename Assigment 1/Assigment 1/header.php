@@ -15,6 +15,12 @@
 	<body>
 		<div class="top-navigation">
 
+            <?php if (is_logged_in()) { ?>
+                <a style="float:right;" href="#" onclick="return false;">
+                    Hi, <?php echo $auth_user['name'] ?>
+                    <img src="<?php echo $auth_user['pic_path'] ?>" style="display: inline-block; height: 40px; margin: -15px 0;">
+                </a>
+            <?php } ?>
 			<a <?php if ($page=='index') echo 'class="active"'; ?> id="home" href="index.php">Homepage</a>
 
 			<?php if (is_logged_in()) {?>

@@ -22,3 +22,7 @@ try{
   function auth_logout() {
     auth_set_user(auth_get_user_id(),true);
   }
+
+  if (is_logged_in()) {
+    $auth_user = get_user(auth_get_user_id());
+  }

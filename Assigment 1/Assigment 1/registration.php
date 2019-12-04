@@ -68,24 +68,29 @@
 		// if validation was successful
 		if ($passed_validation) {
 
-            $picture_path = 'images/users/'.preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['email']).'.'.strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
-            
-            if (move_uploaded_file($_FILES["pic_path"]["tmp_name"],$picture_path)) {
+            $name = preg_replace("/[^A-Za-z0-9]/", '', $_POST['email']).'.'.strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
+
+            try {
+                $picture_path = upload_image('users/'.$name, $_FILES["pic_path"]["tmp_name"]);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+                die();
+            }
+
+            if($picture_path) {
             
                 // create user
-    			$user_id = create_login($_POST['name'],$_POST['email'],$_POST['password'],$picture_path,$_POST['marketing']);
+    			$result = create_login($_POST['name'],$_POST['email'],$_POST['password'],$picture_path,$_POST['marketing']);
 
-                // if user was created
-    			if($user_id) {
+                if ($result == 'duplicate entry') {
+                    $errors['duplicate'] = 'That email address is already in use.';
+                    $_POST['email'] = null;
+                } else {
     				// success
     				// setting auth cookie
-    				auth_set_user($user_id);
-    				//header('Location: index.php');
-
-                // if failed to create user
-    			} else {
-    				// nothing!
-    			}
+    				auth_set_user($result);
+    				header('Location: index.php');
+    			} 
             }
 		}
 	}

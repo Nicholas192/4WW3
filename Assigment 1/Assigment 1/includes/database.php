@@ -10,20 +10,35 @@
 
     function create_login($name,$email,$password,$pic_path,$marketing) {
       global $pdo;
-      $password = sha1($password.'upupdowndownleftrightleftright'.$password.'ABABSelectStart');
-      $stmt = $pdo->prepare("INSERT INTO users (name,email,password,pic_path,marketing) VALUES (?, ?, ?, ?, ?)");
-      $stmt->execute([$name,$email,$password,$pic_path,$marketing]);
+      $password = sha1($email.'upupdowndownleftrightleftright'.$password.'ABABSelectStart');
+      try {
+          $stmt = $pdo->prepare("INSERT INTO users (name,email,password,pic_path,marketing) VALUES (?, ?, ?, ?, ?)");
+          $stmt->execute([$name,$email,$password,$pic_path,$marketing]);
+        } catch (PDOException $e) {
+            if (strpos($e->getMessage(), 'Duplicate entry')) {
+                return 'duplicate entry';
+            }
+        }
       return $pdo->lastInsertId();
     }
 
     function check_login($email,$password) {
       global $pdo;
-      $password = sha1($password.'upupdowndownleftrightleftright'.$password.'ABABSelectStart');
+      $password = sha1($email.'upupdowndownleftrightleftright'.$password.'ABABSelectStart');
       $stmt = $pdo->prepare("SELECT * FROM users WHERE email=? AND password=? ");
       $stmt->execute([$email,$password]);
       $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
       if(!$arr) return false;
       return $arr[0]['id'];
+    }
+
+    function get_user($id) {
+      global $pdo;
+      $stmt = $pdo->prepare("SELECT * FROM users WHERE id=?");
+      $stmt->execute([$id]);
+      $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      if(!$arr) return false;
+      return $arr[0];
     }
 
     function create_restaurant($name,$address,$phone,$lat,$long,$pic_path,$description) {

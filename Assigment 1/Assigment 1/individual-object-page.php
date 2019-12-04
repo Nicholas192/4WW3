@@ -40,6 +40,8 @@
 		<div class="main-wrap">
 		<h2>Individual Restaurant Details</h2>
 
+        <img src="<?php echo $restaurant['pic_path'] ?>">
+
 		<div id="map"></div>
         <script src="js/newmap.js"></script>
         <script type="text/javascript">

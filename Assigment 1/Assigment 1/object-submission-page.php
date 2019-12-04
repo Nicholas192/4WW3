@@ -70,10 +70,16 @@
         // if validation was successful
         if ($passed_validation) {
 
+            $name = preg_replace("/[^A-Za-z0-9]/", '', $_POST['email']).'.'.strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
 
-            $picture_path = 'images/restaurants/'.preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['name']).'.'.strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
+            try {
+                $picture_path = upload_image('restaurants/'.$name, $_FILES["pic_path"]["tmp_name"]);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+                die();
+            }
 
-            if (move_uploaded_file($_FILES["pic_path"]["tmp_name"],$picture_path)) {
+            if($picture_path) {
             
                 // create user
                 $restaurant_id = create_restaurant($_POST['name'],$_POST['address'],$_POST['phone'],$_POST['lat'],$_POST['long'],$picture_path,$_POST['description']);

@@ -18,16 +18,7 @@
             <?php foreach ($restaurants as $index => $restaurant) { ?>
     			<div class="image-container">
 
-                    <div id="map-<?php echo $restaurant['id']?>" style="width:100%;height: 266px;"></div>
-                    <script type="text/javascript">
-                        i = 0;
-                        while(true) {
-                            if (google) {
-                                initMapSmall(document.getElementById('map-<?php echo $restaurant['id']?>'),'<?php echo $restaurant['name']?>',<?php echo $restaurant['lat']?>,<?php echo $restaurant['long']?>);
-                                break;
-                            }
-                        } 
-                    </script>
+                        <img src="<?php echo $restaurant['pic_path'] ?>">
                     <div style="float:right;" class="rating rate-<?php echo $restaurant['rating']?>">
                         <label class="star-1" for="star-1"></label>
                         <label class="star-2" for="star-2"></label>
