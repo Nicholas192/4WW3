@@ -52,8 +52,8 @@
 			else {echo '<div class=body-white>';}
 		?>
 		<div class="header">
+			<img class="symbol" style="width:100px;margin-top: -15px;float:left;" src="images/restaurant-finder.png" alt="Relevant textual alternative to the image"/>
 			<h1>Restaurant Finder</h1>
-			<img class="symbol" src="images/restaurant-finder.png" alt="Relevant textual alternative to the image"/>
 		</div>
 		<div class="top-navigation">
 
