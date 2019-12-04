@@ -773,7 +773,7 @@ input[name=rating] {
 .rating label:after {
     content: "\2606";
     font-size:100%;
-    color:orange;
+    color: Green;
 }
 
 .rating.rate-1 .star-1:after,.rating.rate-2 .star-1:after,.rating.rate-3 .star-1:after,.rating.rate-4 .star-1:after,.rating.rate-5 .star-1:after {content: "\2605";}
