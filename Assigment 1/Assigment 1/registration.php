@@ -1,7 +1,12 @@
 <?php
 
+    // Include bootstrap
     require_once('includes/bootstrap.php');
+
+    // If the user is already logged in then they don't need to register again. Send them to the homepage
     if (is_logged_in()) header('Location: index.php');
+
+    // init validation
     $errors = [];
 
     // check for form submission
@@ -9,8 +14,7 @@
 
 		$passed_validation = true;
 
-		// validate
-		// if any validation fails, set $passed_validation to false
+		// validate name
         switch(validate_text('name')) {
             case 'required':
             case 'sanitize':
@@ -19,6 +23,7 @@
                 break;
         }
 
+        // validate email
         switch(validate_email('email')) {
             case 'required':
             case 'sanitize':
@@ -27,6 +32,7 @@
                 break;
         }
 
+        // validate password
         switch(validate_pass('password','passconf')) {
             case 'required':
                 $passed_validation = false;
@@ -42,6 +48,7 @@
                 break;
         }
 
+        // validate image
         switch(validate_image('pic_path')) {
             case 'required':
                 $passed_validation = false;
@@ -57,6 +64,7 @@
                 break;
         }
 
+        // validate marketing flag
         switch(validate_enum('marketing',['YES'])) {
             case 'required':
             case 'value':
@@ -68,34 +76,46 @@
 		// if validation was successful
 		if ($passed_validation) {
 
+            // Make file name web URL friendly
             $name = preg_replace("/[^A-Za-z0-9]/", '', $_POST['email']).'.'.strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
 
+            // Try to upload the image to S3
             try {
                 $picture_path = upload_image('users/'.$name, $_FILES["pic_path"]["tmp_name"]);
             } catch (Exception $e) {
-                echo $e->getMessage();
-                die();
+                // If there's an error there's not much we can do. 
+                // Set it to false so we don't save the user
+                $picture_path = false;
+
+                // Show errer
+                $errors['processing'] = 'There was an error processing your request.';
             }
 
+            // If the image uploaded
             if($picture_path) {
             
                 // create user
     			$result = create_login($_POST['name'],$_POST['email'],$_POST['password'],$picture_path,$_POST['marketing']);
 
+                // if it was a duplicate email
                 if ($result == 'duplicate entry') {
+                    // show error
                     $errors['duplicate'] = 'That email address is already in use.';
+                    // remove the email so they can enter antoher
                     $_POST['email'] = null;
                 } else {
     				// success
     				// setting auth cookie
     				auth_set_user($result);
+                    // redirect to the home page
     				header('Location: index.php');
+                    exit();
     			} 
             }
 		}
 	}
 
-
+    // Include the html header
 	include('header.php');
 ?>
 
@@ -108,6 +128,7 @@
         </div>
         <div class="flex-columns" style="color: #D00;">
             <?php 
+            // show any errors
                 foreach ($errors as $error) {
                     echo $error.'<br>';
                 }
@@ -177,4 +198,4 @@
 
 
 <script type="text/javascript" src="js/registration.js"></script>
-<?php include('footer.php'); ?>
+<?php include('footer.php'); // include the html footer?>

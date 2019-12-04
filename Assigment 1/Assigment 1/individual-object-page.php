@@ -1,16 +1,22 @@
 <?php
 
+    // Load the bootstrap
     require_once('includes/bootstrap.php');
 
-    // if (!is_logged_in()) header('Location: login.php');
+    // If there's no id then there's nothing to see here.
+    // send them to the search form
     if (empty($_GET['id'])) header('Location: search-form.php');
+
+    // initalize variabled needed
     $errors = [];
     $_GET['id'] = intval($_GET['id']);
 
+    // if they submitted a review and there is an restaurant id
     if (!empty($_POST) && !empty($_GET['id'])) {
 
         $passed_validation = true;
 
+        // validate rating
         switch(validate_int('rating')) {
             case 'required':
             case 'sanitize':
@@ -19,6 +25,7 @@
                 break;
         }
 
+        // validate the reivew
         switch(validate_text('review')) {
             case 'required':
             case 'sanitize':
@@ -27,13 +34,20 @@
                 break;
         }
 
+        // if they passed validation
         if ($passed_validation) {
+            // save the rating
             save_rating($_GET['id'],$_POST['rating'],$_POST['review']);
+            // update the overall rating
             update_restaurant_rating($_GET['id']);
         }
     }
 
+    // get the restaurant rating for the page
+    // do this after the review submission incase it impacts the rating
     $restaurant = search_restaurant($_GET['id']);
+
+    // load the html header
     include('header.php');
 ?>
 
@@ -68,7 +82,7 @@
         <hr>
         <h3>Top Reviews</h3>
 
-        <?php foreach ($restaurant['reviews'] as $review) { ?>
+        <?php foreach ($restaurant['reviews'] as $review) { // loop through all the reviews and output them?>
 
             <hr style="width:66%">
 
@@ -80,16 +94,17 @@
                 <label class="star-5" for="star-5"></label>
             </div>
             <p><?php echo $review['review']?></p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <?php echo $review['name']?></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <?php echo $review['name']?> <img src="<?php echo $review['pic_path'] ?>" style="display: inline-block; height: 40px; margin: -15px 0;"></p>
         <?php } ?>
 
 
             <hr>
 		<h3>Enter a Review</h3>
 
-        <?php if (is_logged_in()) { ?>
+        <?php if (is_logged_in()) { // only if a user is logged in can they submit a reivew?>
         <div class="flex-columns" style="color: #D00;">
             <?php 
+            // show any errors
                 foreach ($errors as $error) {
                     echo $error.'<br>';
                 }
@@ -130,4 +145,4 @@
 
 
 
-<?php include('footer.php'); ?>
+<?php include('footer.php'); // load the html footer?>

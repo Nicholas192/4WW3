@@ -45,6 +45,7 @@
 
 	<body 
 	<?php 
+        // changing the background colour based on page
 		if ($page=='login') {echo 'style="background: #9186ff;"';} 
 		elseif ($page=='registration') {echo 'style="background: #8691ff;"';}
 		elseif ($page=='search-form') {echo 'style="background: #86ff91;"';} 
@@ -59,6 +60,10 @@
 		</div>
 		<div class="top-navigation">
 
+            <?php 
+                // if the user is logged in, show their name and picture
+                // toggle the active class depending on which page we're on
+            ?>
             <?php if (is_logged_in()) { ?>
                 <a style="float:right;" href="#" onclick="return false;">
                     Hi, <?php echo $auth_user['name'] ?>

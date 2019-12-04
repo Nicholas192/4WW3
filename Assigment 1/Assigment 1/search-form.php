@@ -1,43 +1,73 @@
 <?php
-
+    // Include bootstrap
     require_once('includes/bootstrap.php');
 
+    // If they submitted the seach
     if (!empty($_POST)) {
 
+        // init search data array
         $search_data = [];
 
+        // if they submitted name ...
         if (!empty($_POST['name'])) {
+            // ... validate and sanitize ...
             switch(validate_text('name')) {
-                case 'ok': $search_data['name'] = $_POST['name'];
+                // ... add to array only if ok.
+                case 'ok': $search_data['name'] = $_POST['name']; break;
+                // if it didn't come back as ok, then there was something wrong or malicious... remove it from the form
+                default: $_POST['name'] = null;
             }
         }
 
+        // if they submitted location ...
         if (!empty($_POST['location'])) {
+            // ... validate and sanitize ...
             switch(validate_text('location')) {
-                case 'ok': $search_data['address'] = $_POST['location'];
+                // ... add to array only if ok.
+                case 'ok': $search_data['address'] = $_POST['location']; break;
+                // if it didn't come back as ok, then there was something wrong or malicious... remove it from the form
+                default: $_POST['location'] = null;
             }
         } 
+
+        // if they submitted rating ...
         if (!empty($_POST['rating'])) {
+            // ... validate and sanitize ...
             switch(validate_int('rating')) {
-                case 'ok': $search_data['rating'] = $_POST['rating'];
+                // ... add to array only if ok.
+                case 'ok': $search_data['rating'] = $_POST['rating']; break;
+                // if it didn't come back as ok, then there was something wrong or malicious... remove it from the form
+                default: $_POST['rating'] = null;
             }
         }
          
+        // if they submitted coords ...
         if (!empty($_POST['coord_lat']) && !empty($_POST['coord_long'])) {
+            // ... validate and sanitize ...
             switch(validate_text('name')) {
+                // ... add to array only if ok.
                 case 'ok': 
                     $search_data['lat'] = $_POST['coord_lat'];
-                    $search_data['long'] = $_POST['coord_long'];
+                    $search_data['long'] = $_POST['coord_long']; 
+                    break;
+                // if it didn't come back as ok, then there was something wrong or malicious... remove it from the form
+                default: 
+                    $_POST['coord_lat'] = null;
+                    $_POST['coord_long'] = null;
+
             }
         }
 
+        // If there's data in the $search_data
         if (!empty($search_data))
+            // Execute the search
             $restaurants = advanced_search_restaurant($search_data);
 
 
 
     }
 
+    // Include the html header
     include('header.php');
 ?>
 
@@ -90,8 +120,8 @@
 <script src="js/search.js"></script>
 
 <!-- this is an example of the main wrap from the css file. It centers the text and objects in the page. -->
-
-        <?php if (!empty($restaurants)) { ?>
+        
+        <?php if (!empty($restaurants)) { // If there are restaurants to display, show them?>
             <hr>
 
             <h2>Search Results</h2>
@@ -100,7 +130,7 @@
 
             <div class="main-wrap">
 
-                <?php foreach ($restaurants as $index => $restaurant) { ?>
+                <?php foreach ($restaurants as $index => $restaurant) {  // looping though restaurants?>
                     <div class="image-container">
 
       <!--                  <img src="<?php echo $restaurant['pic_path'] ?>"> -->
@@ -122,4 +152,4 @@
         <?php } ?>
 
 
-<?php include('footer.php'); ?>
+<?php include('footer.php'); // Include the html footer?>

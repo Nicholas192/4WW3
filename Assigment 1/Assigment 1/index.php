@@ -1,9 +1,12 @@
 <?php
 
+    // Load the bootstrap
     require_once('includes/bootstrap.php');
 
+    // get the restaurants to display on the home page
     $restaurants = search_restaurant();
 
+    // Include the html header
     include('header.php');
 ?>
 
@@ -34,4 +37,4 @@
 
 		</div>
 
-<?php include('footer.php'); ?>
+<?php include('footer.php'); // Include the html footer?>

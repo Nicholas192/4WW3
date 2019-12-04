@@ -1,16 +1,19 @@
 <?php
 
+    // Inlude bootstrap
     require_once('includes/bootstrap.php');
+
+    // If the user is not logged in, they can't submit. Redirect to the login page
     if (!is_logged_in()) header('Location: login.php');
 
+    // Variable init
     $errors = [];
 
     // check for form submission
     if (!empty($_POST)) {
         $passed_validation = true;
 
-        // validate
-        // if any validation fails, set $passed_validation to false
+        // Validate name
         switch(validate_text('name')) {
             case 'required':
             case 'sanitize':
@@ -19,6 +22,7 @@
                 break;
         }
 
+        // Validate address
         switch(validate_text('address')) {
             case 'required':
             case 'sanitize':
@@ -27,6 +31,7 @@
                 break;
         }
 
+        // Validate phone
         switch(validate_phone('phone')) {
             case 'required':
             case 'pattern':
@@ -35,6 +40,7 @@
                 break;
         }
 
+        // Validate coords
         switch(validate_coords('lat','long')) {
             case 'required':
             case 'sanitize':
@@ -44,6 +50,7 @@
                 break;
         }
 
+        // Validate image
         switch(validate_image('pic_path')) {
             case 'required':
                 $passed_validation = false;
@@ -59,6 +66,7 @@
                 break;
         }
 
+        // Validate description
         switch(validate_text('description')) {
             case 'required':
             case 'value':
@@ -70,24 +78,31 @@
         // if validation was successful
         if ($passed_validation) {
 
+            // Make file name web URL friendly
             $name = preg_replace("/[^A-Za-z0-9]/", '', $_POST['name'].$_POST['lat']).'.'.strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
 
+            // Try to upload the image to S3
             try {
                 $picture_path = upload_image('restaurants/'.$name, $_FILES["pic_path"]["tmp_name"]);
             } catch (Exception $e) {
-                echo $e->getMessage();
-                die();
+                // If there's an error there's not much we can do. 
+                // Set it to false so we don't save the user
+                $picture_path = false;
+
+                // Show errer
+                $errors['processing'] = 'There was an error processing your request.';
             }
 
+            // If the image uploaded
             if($picture_path) {
             
-                // create user
+                // create the restaurant
                 $restaurant_id = create_restaurant($_POST['name'],$_POST['address'],$_POST['phone'],$_POST['lat'],$_POST['long'],$picture_path,$_POST['description']);
 
-                // if user was created
+                // if it was created
                 if($restaurant_id) {
                     // success
-                    // setting auth cookie
+                    // redirect to the page
                     header('Location: individual-object-page.php?id='.$restaurant_id);
 
                 // if failed to create user
@@ -115,6 +130,7 @@
             </div>
             <div class="flex-columns" style="color: #D00;">
                 <?php 
+                    // show errors if any
                     foreach ($errors as $error) {
                         echo $error.'<br>';
                     }
