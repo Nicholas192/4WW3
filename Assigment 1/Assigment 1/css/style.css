@@ -350,7 +350,7 @@ give it a pink background colour
 	  display: flex;
 	  flex-wrap: wrap;
 	  justify-content: space-around;
-	  background-color: #ffffff;
+	  background-color: transparent;
     width: 100%;
     margin: 20px;
   }
@@ -582,7 +582,7 @@ give it a pink background colour
 	  display: flex;
 	  flex-wrap: wrap;
 	  justify-content: space-around;
-	  background-color: #ffffff;
+	  background-color: transparent;
     width: 100%;
     margin: 20px;
   }
