@@ -26,7 +26,7 @@
 		<?php 
 			if ($page=='login') {echo '<title>Login</title>';} 
 			elseif ($page=='logout') {echo '<title>Logout</title>';} 
-			elseif ($page=='register') {echo '<title>Register</title>';}
+			elseif ($page=='registration') {echo '<title>Register</title>';}
 			elseif ($page=='search-form') {echo '<title>Search Restaurants</title>';} 
 			elseif ($page=='object-submission-page') {echo '<title>Submit Restaurant</title>';}
 			elseif ($page=='results-page') {echo '<title></title>';} 
@@ -46,7 +46,7 @@
 		<?php
 			if ($page=='login') {echo '<div class=body-blue>';} 
 			elseif ($page=='logout') {echo '<div class=body-blue>';} 
-			elseif ($page=='register') {echo '<div class=body-green>';}
+			elseif ($page=='registration') {echo '<div class=body-green>';}
 			elseif ($page=='search-form') {echo '<div class=body-yellow>';} 
 			elseif ($page=='object-submission-page') {echo '<div class=body-orange>';}
 			else {echo '<div class=body-white>';}
