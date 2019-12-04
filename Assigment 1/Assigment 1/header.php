@@ -43,7 +43,15 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 
-	<body style="background: #ff9186;">
+	<body 
+	<?php 
+		if ($page=='login') {echo 'style="background: #9186ff;"';} 
+		elseif ($page=='registration') {echo 'style="background: #8691ff;"';}
+		elseif ($page=='search-form') {echo 'style="background: #86ff91;"';} 
+		elseif ($page=='object-submission-page') {echo 'style="background: #91ff86;"';}
+		else {echo 'style="background: #ff9186;"';}
+	?>
+	>
 		<div class="main-content" style="background: #ff9186;">
 		<div class="header">
 			<img class="symbol" style="width:100px;margin-top: -15px;float:left;" src="images/restaurant-finder.png" alt="Relevant textual alternative to the image"/>
