@@ -42,15 +42,8 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 
-	<body>
-		<?php
-			if ($page=='login') {echo '<div class=body-blue>';} 
-			elseif ($page=='logout') {echo '<div class=body-blue>';} 
-			elseif ($page=='registration') {echo '<div class=body-green>';}
-			elseif ($page=='search-form') {echo '<div class=body-yellow>';} 
-			elseif ($page=='object-submission-page') {echo '<div class=body-orange>';}
-			else {echo '<div class=body-white>';}
-		?>
+	<body style="background: #ff9186;">
+		<div class="main-content" style="background: #ff9186;">
 		<div class="header">
 			<img class="symbol" style="width:100px;margin-top: -15px;float:left;" src="images/restaurant-finder.png" alt="Relevant textual alternative to the image"/>
 			<h1>Restaurant Finder</h1>

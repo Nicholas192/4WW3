@@ -86,7 +86,7 @@
 			<div class="flex-columns">
 					<label id="error_List"></label>
 			</div>
-
+</form>
 <script src="js/search.js"></script>
 
 <!-- this is an example of the main wrap from the css file. It centers the text and objects in the page. -->

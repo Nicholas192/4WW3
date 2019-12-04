@@ -139,7 +139,7 @@
 					this was done to learn other verification methods, and because the assignment
 					specifically says to verify using js for this page
 				-->
-				<div class="flex-col"><label for="image_input">Upload a Profile Picture (jpg or png only)</label></div>
+				<div class="flex-col"><label for="image_input">Upload a Profile Picture<br>(jpg or png only)</label></div>
 				<div class="flex-col"><input type="file" id="image_input" name="pic_path"></div>
 		</div>
 		<!--<div class="flex-columns">-->
