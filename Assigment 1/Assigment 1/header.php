@@ -18,7 +18,13 @@
 		<link rel="apple-touch-icon-precomposed" href="images/favicon.png">
 
 
-		<title>Restaurant Finder Homepage</title>
+		<!--  Below are the names of the tabs, which appear at the top of the browser   -->
+		<!--  We might want to include the name of our restaurant in these, especially the homepage    -->
+		<!-- also, we should find a way to include the user's search in the search results tab's title and
+		also include the name of the restaurant in the individual object page. Add more cases if there is more pages that need them -->
+		<?php if ($page=='login') {echo '<title>Login</title>';} elseif ($page=='logout') {echo '<title>Logout</title>';} elseif ($page=='register') {echo '<title>Register</title>';} 
+		elseif ($page=='search-form') {echo '<title>Search Restaurants</title>';} elseif ($page=='object-submission-page') {echo 'Submit Restaurant';}
+		elseif ($page=='results-page') {echo '<title></title>'} else {echo '<title>Homepage</title>'?>
 
 		<meta name="author" content="Nicholas Migliore, Edward Johnson, David Carrie">
 		<meta name="description" content="The Restaurant Finder aims to help people who are hungry to find a
@@ -30,8 +36,8 @@
 	</head>
 
 	<body>
-	<?php if ($page=='login') {echo '<div class=body-blue>';} elseif ($page=='logout') {echo 'echo <div class=body-blue>';} elseif ($page=='register') {echo 'echo <div class=body-green>';} 
-	elseif ($page=='search-form') {echo 'echo <div class=body-yellow>';} elseif ($page=='object-submission-page') {echo 'echo <div class=body-orange>';}
+	<?php if ($page=='login') {echo '<div class=body-blue>';} elseif ($page=='logout') {echo '<div class=body-blue>';} elseif ($page=='register') {echo '<div class=body-green>';} 
+	elseif ($page=='search-form') {echo '<div class=body-yellow>';} elseif ($page=='object-submission-page') {echo '<div class=body-orange>';}
 	else {echo '<div class=body-white>'?>
 		<div class="header">
 			<h1>Restaurant Finder</h1>
