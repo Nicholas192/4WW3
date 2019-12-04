@@ -103,7 +103,9 @@
                 <?php foreach ($restaurants as $index => $restaurant) { ?>
                     <div class="image-container">
 
-                        <img src="<?php echo $restaurant['pic_path'] ?>">
+      <!--                  <img src="<?php echo $restaurant['pic_path'] ?>"> -->
+ <div class="restaurant-image" style="background-image: url('<?php echo $restaurant['pic_path'] ?>');"></div>
+
                         <div style="float:right;" class="rating rate-<?php echo $restaurant['rating']?>">
                             <label class="star-1" for="star-1"></label>
                             <label class="star-2" for="star-2"></label>
@@ -112,7 +114,8 @@
                             <label class="star-5" for="star-5"></label>
                         </div>
                         <a href="individual-object-page.php?id=<?php echo $restaurant['id'] ?>"><h2 class="restaurant-name"><?php echo $restaurant['name'] ?></h2></a>
-                    </div>
+		    </div>
+<br><br><br>
                 <?php } ?>
 
             </div>

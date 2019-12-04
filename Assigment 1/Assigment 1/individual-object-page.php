@@ -40,7 +40,9 @@
 		<div class="main-wrap">
 		<h2>Individual Restaurant Details</h2>
 
-        <img src="<?php echo $restaurant['pic_path'] ?>">
+<!--        <img src="<?php echo $restaurant['pic_path'] ?>"> -->
+ <div class="restaurant-image" style="background-image: url('<?php echo $restaurant['pic_path'] ?>');"></div>
+
 
 		<div id="map"></div>
         <script src="js/newmap.js"></script>
