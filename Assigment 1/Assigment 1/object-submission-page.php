@@ -70,7 +70,7 @@
         // if validation was successful
         if ($passed_validation) {
 
-            $name = preg_replace("/[^A-Za-z0-9]/", '', $_POST['email']).'.'.strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
+            $name = preg_replace("/[^A-Za-z0-9]/", '', $_POST['name'].$_POST['lat']).'.'.strtolower(pathinfo(basename($_FILES["pic_path"]["name"]),PATHINFO_EXTENSION));
 
             try {
                 $picture_path = upload_image('restaurants/'.$name, $_FILES["pic_path"]["tmp_name"]);
